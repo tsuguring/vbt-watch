@@ -16,6 +16,9 @@
 		63204D9D29B2CAA600D60018 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204D9C29B2CAA600D60018 /* ContentView.swift */; };
 		63204D9F29B2CAA600D60018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63204D9E29B2CAA600D60018 /* Assets.xcassets */; };
 		63204DA229B2CAA600D60018 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63204DA129B2CAA600D60018 /* Preview Assets.xcassets */; };
+		63204DAD29B2CAED00D60018 /* ActivityClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DAC29B2CAED00D60018 /* ActivityClassifier.swift */; };
+		63204DAF29B2DB4800D60018 /* ExtendedRunTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DAE29B2DB4800D60018 /* ExtendedRunTime.swift */; };
+		63204DB329B2DDB200D60018 /* BenchPressClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		63204D9C29B2CAA600D60018 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		63204D9E29B2CAA600D60018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63204DA129B2CAA600D60018 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		63204DAC29B2CAED00D60018 /* ActivityClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityClassifier.swift; sourceTree = "<group>"; };
+		63204DAE29B2DB4800D60018 /* ExtendedRunTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedRunTime.swift; sourceTree = "<group>"; };
+		63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BenchPressClassifier.mlmodel; sourceTree = "<group>"; };
+		63204DB429B2E17700D60018 /* VBTwatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "VBTwatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +120,12 @@
 		63204D9929B2CAA600D60018 /* VBTwatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				63204DB429B2E17700D60018 /* VBTwatch-Watch-App-Info.plist */,
 				63204D9A29B2CAA600D60018 /* VBTwatchApp.swift */,
 				63204D9C29B2CAA600D60018 /* ContentView.swift */,
+				63204DAC29B2CAED00D60018 /* ActivityClassifier.swift */,
+				63204DAE29B2DB4800D60018 /* ExtendedRunTime.swift */,
+				63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */,
 				63204D9E29B2CAA600D60018 /* Assets.xcassets */,
 				63204DA029B2CAA600D60018 /* Preview Content */,
 			);
@@ -241,6 +252,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				63204D9D29B2CAA600D60018 /* ContentView.swift in Sources */,
+				63204DAF29B2DB4800D60018 /* ExtendedRunTime.swift in Sources */,
+				63204DAD29B2CAED00D60018 /* ActivityClassifier.swift in Sources */,
+				63204DB329B2DDB200D60018 /* BenchPressClassifier.mlmodel in Sources */,
 				63204D9B29B2CAA600D60018 /* VBTwatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,8 +387,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 9QU9236F4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "VBTwatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = VBTwatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = jp.noobs.VBTwatch;
@@ -390,7 +406,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Debug;
 		};
@@ -402,8 +418,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 9QU9236F4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "VBTwatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = VBTwatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = jp.noobs.VBTwatch;
@@ -420,7 +438,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
 			};
 			name = Release;
 		};
@@ -433,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch/Preview Content\"";
+				DEVELOPMENT_TEAM = 9QU9236F4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = VBTwatch;
@@ -465,6 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch/Preview Content\"";
+				DEVELOPMENT_TEAM = 9QU9236F4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = VBTwatch;
