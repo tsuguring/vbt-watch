@@ -12,13 +12,13 @@ import CoreMotion
 class ActivityClassifier: ObservableObject {
     @Published var isStarted = false
     @Published var rep = 0
+    @Published var velocityPerRep = 0.0
     
     struct ModelConstants {
         static let predictionWindowSize = 100
         static let sensorsUpdateInterval = 1.0 / 200.0
         static let stateInLength = 400
     }
-    
     static let configuration = MLModelConfiguration()
     private let motionClassificationModel = try! BenchPressClassifier(configuration: configuration)
     
@@ -35,9 +35,11 @@ class ActivityClassifier: ObservableObject {
         shape:[ModelConstants.stateInLength as NSNumber],
         dataType: MLMultiArrayDataType.double)
     
+    private let motionManager = CMMotionManager()
     private var predictionWindowIndex = 0
     private var lastLavel = "Neutral"
-    private let motionManager = CMMotionManager()
+    private let velocityMeasurement = VelocityMeasurement(timeSpan: ModelConstants.sensorsUpdateInterval)
+    private var isBenchPress = false
     
     func startManageMotionData() {
         ExtendedRunTime.shared.start()
@@ -53,7 +55,13 @@ class ActivityClassifier: ObservableObject {
         motionManager.deviceMotionUpdateInterval = TimeInterval(ModelConstants.sensorsUpdateInterval)
         motionManager.startDeviceMotionUpdates(to: .main) { deviceMotion, error in
             guard let deviceMotionData = deviceMotion else { return }
+            
             self.addDiviceMotionSampleToDataArray(motionSample: deviceMotionData)
+            
+            // measure velocity while bench pressing
+            if self.isBenchPress {
+                self.velocityMeasurement.calculateVelocity(accel: deviceMotionData.userAcceleration.x)
+            }
         }
     }
     
@@ -86,13 +94,23 @@ class ActivityClassifier: ObservableObject {
             stateIn: stateOutput)
         
         print(modelPrediction.label, modelPrediction.labelProbability)
-        getRepInfomation(prediction: modelPrediction)
+        checkMotion(prediction: modelPrediction)
     }
     
-    private func getRepInfomation(prediction: BenchPressClassifierOutput) {
-        if prediction.label != "BenchPress" && lastLavel == "BenchPress" {
-            rep += 1
+    private func checkMotion(prediction: BenchPressClassifierOutput) {
+        // When the label changes from Neutral to BenchPress, BenchPress begins
+        if prediction.label == "BenchPress" && lastLavel != "BenchPress" {
+            isBenchPress = true
         }
+        // When the label changes from BenchPress to Neutral, BenchPress ends
+        else if prediction.label != "BenchPress" && lastLavel == "BenchPress" {
+            velocityPerRep = velocityMeasurement.velocity
+            velocityMeasurement.initializeVelocityData()
+            self.rep += 1
+            print("1Repあたりの速度", "\(velocityPerRep)m/s")
+            isBenchPress = false
+        }
+        
         lastLavel = prediction.label
     }
 }
