@@ -19,6 +19,7 @@
 		63204DAD29B2CAED00D60018 /* ActivityClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DAC29B2CAED00D60018 /* ActivityClassifier.swift */; };
 		63204DAF29B2DB4800D60018 /* ExtendedRunTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DAE29B2DB4800D60018 /* ExtendedRunTime.swift */; };
 		63204DB329B2DDB200D60018 /* BenchPressClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */; };
+		63204DB629B42B6C00D60018 /* VelocityMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DB529B42B6C00D60018 /* VelocityMeasurement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		63204DAE29B2DB4800D60018 /* ExtendedRunTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedRunTime.swift; sourceTree = "<group>"; };
 		63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BenchPressClassifier.mlmodel; sourceTree = "<group>"; };
 		63204DB429B2E17700D60018 /* VBTwatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "VBTwatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		63204DB529B42B6C00D60018 /* VelocityMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocityMeasurement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				63204D9A29B2CAA600D60018 /* VBTwatchApp.swift */,
 				63204D9C29B2CAA600D60018 /* ContentView.swift */,
 				63204DAC29B2CAED00D60018 /* ActivityClassifier.swift */,
+				63204DB529B42B6C00D60018 /* VelocityMeasurement.swift */,
 				63204DAE29B2DB4800D60018 /* ExtendedRunTime.swift */,
 				63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */,
 				63204D9E29B2CAA600D60018 /* Assets.xcassets */,
@@ -256,6 +259,7 @@
 				63204DAD29B2CAED00D60018 /* ActivityClassifier.swift in Sources */,
 				63204DB329B2DDB200D60018 /* BenchPressClassifier.mlmodel in Sources */,
 				63204D9B29B2CAA600D60018 /* VBTwatchApp.swift in Sources */,
+				63204DB629B42B6C00D60018 /* VelocityMeasurement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
