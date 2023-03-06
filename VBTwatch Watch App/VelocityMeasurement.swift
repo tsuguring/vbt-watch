@@ -19,12 +19,15 @@ class VelocityMeasurement {
     }
     
     func calculateVelocity(accel: Double) {
-        velocity += (lastAccel + calculateMeterPerSecondSquared(accel: accel)) * timeSpan / 2
-        lastAccel = calculateMeterPerSecondSquared(accel: accel)
+        // Acceleration is positive during the lift
+        if accel >= 0 {
+            velocity += (lastAccel + calculateMeterPerSecondSquared(accel: accel)) * timeSpan / 2
+            lastAccel = calculateMeterPerSecondSquared(accel: accel)
+        }
     }
     
     func calculateMeterPerSecondSquared(accel: Double) -> Double{
-        return abs(accel * VelocityMeasurement.G_ACCEL)
+        return accel * VelocityMeasurement.G_ACCEL
     }
     
     func initializeVelocityData() {

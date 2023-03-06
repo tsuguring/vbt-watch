@@ -19,6 +19,7 @@ class ActivityClassifier: ObservableObject {
         static let sensorsUpdateInterval = 1.0 / 200.0
         static let stateInLength = 400
     }
+    static let VELOCITY_ERROR = 0.1
     static let configuration = MLModelConfiguration()
     private let motionClassificationModel = try! BenchPressClassifier(configuration: configuration)
     
@@ -104,7 +105,7 @@ class ActivityClassifier: ObservableObject {
         }
         // When the label changes from BenchPress to Neutral, BenchPress ends
         else if prediction.label != "BenchPress" && lastLavel == "BenchPress" {
-            velocityPerRep = velocityMeasurement.velocity
+            velocityPerRep = velocityMeasurement.velocity+ActivityClassifier.VELOCITY_ERROR
             velocityMeasurement.initializeVelocityData()
             self.rep += 1
             print("1Repあたりの速度", "\(velocityPerRep)m/s")
