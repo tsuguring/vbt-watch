@@ -23,6 +23,7 @@
 		63204DBB29B71DBC00D60018 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBA29B71DBC00D60018 /* HomeView.swift */; };
 		63204DBD29B72FEC00D60018 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBC29B72FEC00D60018 /* CardView.swift */; };
 		63204DBF29B7693100D60018 /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBE29B7693100D60018 /* Objective.swift */; };
+		63204DC129B80DEE00D60018 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DC029B80DEE00D60018 /* ExplanationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		63204DBA29B71DBC00D60018 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		63204DBC29B72FEC00D60018 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		63204DBE29B7693100D60018 /* Objective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
+		63204DC029B80DEE00D60018 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				63204D9C29B2CAA600D60018 /* ContentView.swift */,
+				63204DC029B80DEE00D60018 /* ExplanationView.swift */,
 				63204DBA29B71DBC00D60018 /* HomeView.swift */,
 				63204DBC29B72FEC00D60018 /* CardView.swift */,
 			);
@@ -287,6 +290,7 @@
 				63204DBD29B72FEC00D60018 /* CardView.swift in Sources */,
 				63204DB329B2DDB200D60018 /* BenchPressClassifier.mlmodel in Sources */,
 				63204D9B29B2CAA600D60018 /* VBTwatchApp.swift in Sources */,
+				63204DC129B80DEE00D60018 /* ExplanationView.swift in Sources */,
 				63204DB629B42B6C00D60018 /* VelocityMeasurement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

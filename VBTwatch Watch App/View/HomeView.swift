@@ -10,11 +10,11 @@ import SwiftUI
 struct HomeView: View {
     let objectives: [Objective]
     var body: some View {
-        ScrollView {
+        List {
             ForEach(objectives, id: \.title) { objective in
                 CardView(objective: objective)
             }
-        }
+        }.listStyle(CarouselListStyle())
     }
 }
 
