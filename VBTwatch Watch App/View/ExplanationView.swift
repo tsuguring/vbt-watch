@@ -1,5 +1,5 @@
 //
-//  VBTExplanation.swift
+//  ExplanationView.swift
 //  VBTwatch Watch App
 //
 //  Created by Ryo Yoshitsugu on R 5/03/08.
