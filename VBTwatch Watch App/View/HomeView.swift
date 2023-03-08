@@ -12,7 +12,9 @@ struct HomeView: View {
     var body: some View {
         List {
             ForEach(objectives, id: \.title) { objective in
-                CardView(objective: objective)
+                NavigationLink(destination: EditView()) {
+                    CardView(objective: objective)
+                }
             }
         }.listStyle(CarouselListStyle())
     }

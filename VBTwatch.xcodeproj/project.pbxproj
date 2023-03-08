@@ -24,6 +24,7 @@
 		63204DBD29B72FEC00D60018 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBC29B72FEC00D60018 /* CardView.swift */; };
 		63204DBF29B7693100D60018 /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBE29B7693100D60018 /* Objective.swift */; };
 		63204DC129B80DEE00D60018 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DC029B80DEE00D60018 /* ExplanationView.swift */; };
+		63FC75E329B85867008E5522 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FC75E229B85867008E5522 /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		63204DBC29B72FEC00D60018 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		63204DBE29B7693100D60018 /* Objective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
 		63204DC029B80DEE00D60018 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
+		63FC75E229B85867008E5522 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				63204D9C29B2CAA600D60018 /* ContentView.swift */,
 				63204DC029B80DEE00D60018 /* ExplanationView.swift */,
 				63204DBA29B71DBC00D60018 /* HomeView.swift */,
+				63FC75E229B85867008E5522 /* EditView.swift */,
 				63204DBC29B72FEC00D60018 /* CardView.swift */,
 			);
 			path = View;
@@ -284,6 +287,7 @@
 			files = (
 				63204DBF29B7693100D60018 /* Objective.swift in Sources */,
 				63204D9D29B2CAA600D60018 /* ContentView.swift in Sources */,
+				63FC75E329B85867008E5522 /* EditView.swift in Sources */,
 				63204DBB29B71DBC00D60018 /* HomeView.swift in Sources */,
 				63204DAF29B2DB4800D60018 /* ExtendedRunTime.swift in Sources */,
 				63204DAD29B2CAED00D60018 /* ActivityClassifier.swift in Sources */,
