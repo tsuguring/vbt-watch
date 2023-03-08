@@ -10,22 +10,22 @@ import SwiftUI
 struct CardView: View {
     let objective: Objective
     var body: some View {
-        ZStack(alignment: .leading) {
-            Color(red: 0.28, green: 0.28, blue: 0.28)
-            VStack(alignment: .leading) {
-                HStack {
-                    Image(systemName: objective.image).font(.system(size: 40)).foregroundColor(.pink)
+        VStack(alignment: .leading) {
+            HStack {
+                Image(systemName: objective.image).font(.system(size: 40)).foregroundColor(.pink)
+                Spacer()
+                VStack{
+                    NavigationLink(destination: VBTExplanation(objective: objective), label: {
+                        Image(systemName: "questionmark.circle.fill").font(.system(size:23)).foregroundColor(.gray)
+                    })
                     Spacer()
-                    VStack{
-                        Image(systemName: "ellipsis.circle.fill").font(.system(size:20)).foregroundColor(.gray)
-                        Spacer()
-                    }
                 }
-                Text(objective.title).frame(alignment: .leading)
-                Text("1Repあたり\(String(objective.velocity))m/s").font(.footnote).frame(alignment: .leading)
-                Text(objective.weight).font(.footnote).frame(alignment: .leading)
-            }.padding()
-        }.cornerRadius(20)
+                
+            }
+            Text(objective.title).frame(alignment: .leading)
+            Text("1Repあたり\(String(objective.velocity))m/s").font(.footnote).frame(alignment: .leading)
+            Text("\(objective.weight)1RM").font(.footnote).frame(alignment: .leading)
+        }.padding().cornerRadius(20)
     }
 }
 

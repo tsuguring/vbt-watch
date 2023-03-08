@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct VBTwatch_Watch_AppApp: App {
+    let objectives = Objective.sampleData
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                HomeView(objectives: objectives)
+            }
         }
     }
 }
