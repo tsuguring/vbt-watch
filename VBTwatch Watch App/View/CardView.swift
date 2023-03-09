@@ -12,7 +12,9 @@ struct CardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: objective.image).font(.system(size: 40)).foregroundColor(.pink)
+                Image(objective.image)
+                    .font(.system(size: 40))
+                    .foregroundColor(.pink)
                 Spacer()
                 VStack{
                     NavigationLink(destination: VBTExplanation(objective: objective), label: {
