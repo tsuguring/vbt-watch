@@ -8,54 +8,19 @@
 import SwiftUI
 
 struct EditView: View {
+    @State var trainingData = TrainingData.Data()
     var body: some View {
-        VStack {
-            VStack {
-                Text("重量").font(.system(size:13))
-                HStack {
-                    Image(systemName: "plus.circle.fill").font(.system(size:23))
-                        .foregroundColor(.gray)
-                    Spacer()
-                    HStack{
-                        Text("50").font(.title2)
-                        Text("kg")
-                    }
-                    Spacer()
-                    Image(systemName: "minus.circle.fill").font(.system(size:23))
-                        .foregroundColor(.gray)
-                }
-            }
-            VStack {
-                Text("セット数").font(.footnote)
-                HStack {
-                    Image(systemName: "plus.circle.fill").font(.system(size:23))
-                        .foregroundColor(.gray)
-                    Spacer()
-                    Text("1").font(.title2)
-                    Spacer()
-                    Image(systemName: "minus.circle.fill").font(.system(size:23))
-                        .foregroundColor(.gray)
-                }
-            }
-            VStack {
-                HStack{
-                    Text("上限速度低下率").font(.footnote)
-                    Image(systemName: "questionmark.circle.fill").font(.system(size:15))
-                        .foregroundColor(.gray)
-                }
-                HStack {
-                    Image(systemName: "plus.circle.fill").font(.system(size:23))
-                        .foregroundColor(.gray)
-                    Spacer()
-                    HStack{
-                        Text("20").font(.title2)
-                        Text("%")
-                    }
-                    Spacer()
-                    Image(systemName: "minus.circle.fill").font(.system(size:23))
-                        .foregroundColor(.gray)
-                }
-            }
+        ScrollView {
+            Form(label: "重量", data: $trainingData.weight)
+            Form(label: "セット数", data: $trainingData.setCount)
+            Form(label: "上限速度低下率", data: $trainingData.maxVelocityLoss)
+            Button(action: {
+                
+            }, label: {
+                Text("START")
+            }).background(.pink)
+                .cornerRadius(10)
+                .padding(.top)
         }
     }
 }

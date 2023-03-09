@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     let objective: Objective
+    @State private var isPush = false
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -17,9 +18,14 @@ struct CardView: View {
                     .foregroundColor(.pink)
                 Spacer()
                 VStack{
-                    NavigationLink(destination: VBTExplanation(objective: objective), label: {
-                        Image(systemName: "questionmark.circle.fill").font(.system(size:23)).foregroundColor(.gray)
-                    })
+                    NavigationLink(destination: VBTExplanation(objective: objective), isActive: $isPush) {
+                        Image(systemName: "questionmark.circle.fill")
+                            .font(.system(size:23))
+                            .foregroundColor(.gray)
+                            .onTapGesture {
+                                self.isPush.toggle()
+                            }
+                    }
                     Spacer()
                 }
                 

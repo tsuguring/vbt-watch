@@ -113,7 +113,7 @@ extension TrainingData {
         var weight: Int = 40
         var setCount: Int = 3
         var sets: [Set] = []
-        var maxVelocityLoss: Int = 0
+        var maxVelocityLoss: Int = 20
         var date: Date = Date()
     }
     
