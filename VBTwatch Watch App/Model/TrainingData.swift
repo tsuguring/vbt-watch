@@ -11,17 +11,17 @@ struct TrainingData: Identifiable {
     let id: UUID
     var objective: Objective
     var weight: Int
-    var numSet: Int
-    var set: [Set]
+    var setCount: Int
+    var sets: [Set]
     var maxVelocityLoss: Int
     var date: Date
     
-    init(id: UUID = UUID(), objective: Objective, weight: Int, numSet: Int, set: [Set], maxVelocityLoss: Int, date: Date) {
+    init(id: UUID = UUID(), objective: Objective, weight: Int, setCount: Int, sets: [Set], maxVelocityLoss: Int, date: Date) {
         self.id = id
         self.objective = objective
         self.weight = weight
-        self.numSet = numSet
-        self.set = set
+        self.setCount = setCount
+        self.sets = sets
         self.maxVelocityLoss = maxVelocityLoss
         self.date = date
     }
@@ -46,33 +46,33 @@ extension TrainingData {
 
     struct Set {
         let id: UUID
-        var numRep: Int
-        var rep: [Rep]
+        var repCount: Int
+        var reps: [Rep]
         var averageVelocity: Double
         var maxVelocity: Double
         
-        init(id: UUID = UUID(), numRep: Int, rep: [Rep], averageVelocity: Double, maxVelocity: Double) {
+        init(id: UUID = UUID(), repCount: Int, reps: [Rep], averageVelocity: Double, maxVelocity: Double) {
             self.id = id
-            self.numRep = numRep
-            self.rep = rep
+            self.repCount = repCount
+            self.reps = reps
             self.averageVelocity = averageVelocity
             self.maxVelocity = maxVelocity
         }
         
         struct Data {
-            var numRep: Int = 0
-            var rep: [Rep] = []
+            var repCount: Int = 0
+            var reps: [Rep] = []
             var averageVelocity: Double = 0.0
             var maxVelocity: Double = 0.0
         }
         
         var set: Data {
-            Data(numRep: numRep, rep: rep, averageVelocity: averageVelocity, maxVelocity: maxVelocity)
+            Data(repCount: repCount, reps: reps, averageVelocity: averageVelocity, maxVelocity: maxVelocity)
         }
         
         mutating func update(from data: Data) {
-            numRep = data.numRep
-            rep = data.rep
+            repCount = data.repCount
+            reps = data.reps
             averageVelocity = data.averageVelocity
             maxVelocity = data.maxVelocity
         }
@@ -111,21 +111,21 @@ extension TrainingData {
     struct Data {
         var objective: Objective = Objective(title: "", velocity: 0.5, perRM: 50, image: "")
         var weight: Int = 40
-        var numSet: Int = 3
-        var set: [Set] = []
+        var setCount: Int = 3
+        var sets: [Set] = []
         var maxVelocityLoss: Int = 0
         var date: Date = Date()
     }
     
     var data: Data {
-        Data(objective: objective, weight: weight, numSet: numSet, set: set, maxVelocityLoss: maxVelocityLoss, date: date)
+        Data(objective: objective, weight: weight, setCount: setCount, sets: sets, maxVelocityLoss: maxVelocityLoss, date: date)
     }
     
     mutating func update(from data: Data) {
         objective = data.objective
         weight = data.weight
-        numSet = data.numSet
-        set = data.set
+        setCount = data.setCount
+        sets = data.sets
         maxVelocityLoss = data.maxVelocityLoss
         date = data.date
     }
@@ -134,7 +134,7 @@ extension TrainingData {
 extension TrainingData {
     static let sampleData: [TrainingData] =
     [
-        TrainingData(objective: Objective(title: "筋肥大", velocity: 0.46, perRM: 80, image: "figure.strengthtraining.traditional"), weight: 50, numSet: 2, set: [Set(numRep: 5, rep: [], averageVelocity: 0.41, maxVelocity: 0.55), Set(numRep: 1, rep: [Rep(velocity: 0.34, velocityLoss: 20, targetError: 1.12)], averageVelocity: 0.34, maxVelocity: 0.45)], maxVelocityLoss: 30, date: Date()),
-        TrainingData(objective: Objective(title: "スピード筋力", velocity: 0.94, perRM: 50, image: "figure.core.training"), weight: 30, numSet: 3, set: [], maxVelocityLoss: 25, date: Date())
+        TrainingData(objective: Objective(title: "筋肥大", velocity: 0.46, perRM: 80, image: "custom.figure.strengthtraining.traditional"), weight: 50, setCount: 2, sets: [Set(repCount: 5, reps: [], averageVelocity: 0.41, maxVelocity: 0.55), Set(repCount: 1, reps: [Rep(velocity: 0.34, velocityLoss: 20, targetError: 1.12)], averageVelocity: 0.34, maxVelocity: 0.45)], maxVelocityLoss: 30, date: Date()),
+        TrainingData(objective: Objective(title: "スピード筋力", velocity: 0.94, perRM: 50, image: "custom.figure.core.training"), weight: 30, setCount: 3, sets: [], maxVelocityLoss: 25, date: Date())
     ]
 }
