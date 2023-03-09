@@ -13,10 +13,10 @@ struct TrainingData: Identifiable {
     var weight: Int
     var numSet: Int
     var set: [Set]
-    var maxVelocityLoss: Double
+    var maxVelocityLoss: Int
     var date: Date
     
-    init(id: UUID = UUID(), objective: Objective, weight: Int, numSet: Int, set: [Set], maxVelocityLoss: Double, date: Date) {
+    init(id: UUID = UUID(), objective: Objective, weight: Int, numSet: Int, set: [Set], maxVelocityLoss: Int, date: Date) {
         self.id = id
         self.objective = objective
         self.weight = weight
@@ -42,24 +42,6 @@ extension TrainingData {
             self.perRM = perRM
             self.image = image
         }
-        
-        struct Data {
-            var title: String = ""
-            var velocity: Double = 0.5
-            var perRM: Int = 80
-            var image: String = ""
-        }
-
-        var objective: Data {
-            Data(title: title, velocity: velocity, perRM: perRM, image: image)
-        }
-        
-        mutating func update(from data: Data) {
-            title = data.title
-            velocity = data.velocity
-            perRM = data.perRM
-            image = data.image
-        }
     }
 
     struct Set {
@@ -78,10 +60,10 @@ extension TrainingData {
         }
         
         struct Data {
-            var numRep: Int = 3
+            var numRep: Int = 0
             var rep: [Rep] = []
-            var averageVelocity: Double = 0.5
-            var maxVelocity: Double = 0.5
+            var averageVelocity: Double = 0.0
+            var maxVelocity: Double = 0.0
         }
         
         var set: Data {
@@ -110,9 +92,9 @@ extension TrainingData {
         }
         
         struct Data {
-            var velocity: Double = 0.5
-            var velocityLoss: Int = 10
-            var targetError: Double = 0.05
+            var velocity: Double = 0.0
+            var velocityLoss: Int = 0
+            var targetError: Double = 0.0
         }
         
         var rep: Data {
@@ -128,10 +110,10 @@ extension TrainingData {
     
     struct Data {
         var objective: Objective = Objective(title: "", velocity: 0.5, perRM: 50, image: "")
-        var weight: Int = 50
+        var weight: Int = 40
         var numSet: Int = 3
         var set: [Set] = []
-        var maxVelocityLoss: Double = 0
+        var maxVelocityLoss: Int = 0
         var date: Date = Date()
     }
     
