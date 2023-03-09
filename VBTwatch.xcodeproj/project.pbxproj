@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		630110CE29B98DD00063F7BB /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110CD29B98DD00063F7BB /* EditView.swift */; };
-		630110D129B98E350063F7BB /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110D029B98E350063F7BB /* Form.swift */; };
+		630110D129B98E350063F7BB /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110D029B98E350063F7BB /* FormView.swift */; };
 		63204D8929B2CAA500D60018 /* VBTwatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204D8829B2CAA500D60018 /* VBTwatchApp.swift */; };
 		63204D8B29B2CAA500D60018 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204D8A29B2CAA500D60018 /* ContentView.swift */; };
 		63204D8D29B2CAA600D60018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63204D8C29B2CAA600D60018 /* Assets.xcassets */; };
@@ -55,7 +55,7 @@
 
 /* Begin PBXFileReference section */
 		630110CD29B98DD00063F7BB /* EditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
-		630110D029B98E350063F7BB /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		630110D029B98E350063F7BB /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		63204D8529B2CAA500D60018 /* VBTwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBTwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63204D8829B2CAA500D60018 /* VBTwatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBTwatchApp.swift; sourceTree = "<group>"; };
 		63204D8A29B2CAA500D60018 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				63204DBC29B72FEC00D60018 /* CardView.swift */,
-				630110D029B98E350063F7BB /* Form.swift */,
+				630110D029B98E350063F7BB /* FormView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -308,7 +308,7 @@
 				637AFA5F29B98A0C00FF7CDD /* TrainingData.swift in Sources */,
 				63204DBD29B72FEC00D60018 /* CardView.swift in Sources */,
 				63204DB329B2DDB200D60018 /* BenchPressClassifier.mlmodel in Sources */,
-				630110D129B98E350063F7BB /* Form.swift in Sources */,
+				630110D129B98E350063F7BB /* FormView.swift in Sources */,
 				63204D9B29B2CAA600D60018 /* VBTwatchApp.swift in Sources */,
 				63204DC129B80DEE00D60018 /* ExplanationView.swift in Sources */,
 				63204DB629B42B6C00D60018 /* VelocityMeasurement.swift in Sources */,
