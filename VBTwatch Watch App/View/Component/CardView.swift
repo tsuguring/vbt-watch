@@ -28,11 +28,10 @@ struct CardView: View {
                     }
                     Spacer()
                 }
-                
             }
             Text(objective.title).frame(alignment: .leading)
             Text("1Repあたり\(String(objective.velocity))m/s").font(.footnote).frame(alignment: .leading)
-            Text("\(objective.weight)1RM").font(.footnote).frame(alignment: .leading)
+            Text("\(objective.perRM)%1RM").font(.footnote).frame(alignment: .leading)
         }.padding().cornerRadius(20)
     }
 }

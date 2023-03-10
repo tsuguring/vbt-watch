@@ -10,14 +10,14 @@ import Foundation
 struct Objective {
     var title: String
     var velocity: Double
-    var weight: String
+    var perRM: Int
     var image: String
 }
 
 extension Objective {
     static let sampleData: [Objective] =
     [
-        Objective(title: "筋肥大", velocity: 0.46, weight: "80%", image: "custom.figure.strengthtraining.traditional"),
-        Objective(title: "スピード筋力", velocity: 0.94, weight: "50%", image: "custom.figure.core.training")
+        Objective(title: "筋肥大", velocity: 0.46, perRM: 80, image: "custom.figure.strengthtraining.traditional"),
+        Objective(title: "スピード筋力", velocity: 0.94, perRM: 50, image: "custom.figure.core.training")
     ]
 }
