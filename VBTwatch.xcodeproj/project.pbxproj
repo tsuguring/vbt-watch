@@ -28,6 +28,7 @@
 		63204DBD29B72FEC00D60018 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBC29B72FEC00D60018 /* CardView.swift */; };
 		63204DBF29B7693100D60018 /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBE29B7693100D60018 /* Objective.swift */; };
 		63204DC129B80DEE00D60018 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DC029B80DEE00D60018 /* ExplanationView.swift */; };
+		636FC98929BB125E006C9F2F /* CautionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636FC98829BB125E006C9F2F /* CautionView.swift */; };
 		637AFA5F29B98A0C00FF7CDD /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637AFA5E29B98A0C00FF7CDD /* TrainingData.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		63204DBC29B72FEC00D60018 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		63204DBE29B7693100D60018 /* Objective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
 		63204DC029B80DEE00D60018 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
+		636FC98829BB125E006C9F2F /* CautionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CautionView.swift; sourceTree = "<group>"; };
 		637AFA5E29B98A0C00FF7CDD /* TrainingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 				63204DBA29B71DBC00D60018 /* HomeView.swift */,
 				630110D229B9D5700063F7BB /* Prepare.swift */,
 				630110CD29B98DD00063F7BB /* EditView.swift */,
+				636FC98829BB125E006C9F2F /* CautionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				637AFA5F29B98A0C00FF7CDD /* TrainingData.swift in Sources */,
 				63204DBD29B72FEC00D60018 /* CardView.swift in Sources */,
 				63204DB329B2DDB200D60018 /* BenchPressClassifier.mlmodel in Sources */,
+				636FC98929BB125E006C9F2F /* CautionView.swift in Sources */,
 				630110D129B98E350063F7BB /* FormView.swift in Sources */,
 				63204D9B29B2CAA600D60018 /* VBTwatchApp.swift in Sources */,
 				630110D329B9D5700063F7BB /* Prepare.swift in Sources */,
