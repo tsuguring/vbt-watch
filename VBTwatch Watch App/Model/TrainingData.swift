@@ -28,22 +28,6 @@ struct TrainingData: Identifiable {
 }
 
 extension TrainingData {
-    struct Objective {
-        let id: UUID
-        var title: String
-        var velocity: Double
-        var perRM: Int
-        var image: String
-        
-        init(id: UUID = UUID(), title: String, velocity: Double, perRM: Int, image: String) {
-            self.id = id
-            self.title = title
-            self.velocity = velocity
-            self.perRM = perRM
-            self.image = image
-        }
-    }
-
     struct Set {
         let id: UUID
         var repCount: Int
@@ -109,11 +93,11 @@ extension TrainingData {
     }
     
     struct Data {
-        var objective: Objective = Objective(title: "", velocity: 0.5, perRM: 50, image: "")
+        var objective: Objective = Objective.sampleData[0]
         var weight: Int = 40
         var setCount: Int = 3
         var sets: [Set] = []
-        var maxVelocityLoss: Int = 0
+        var maxVelocityLoss: Int = 20
         var date: Date = Date()
     }
     

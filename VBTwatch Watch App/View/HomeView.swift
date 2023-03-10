@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var trainingData: TrainingData
+    @State var data = TrainingData.Data()
     let objectives: [Objective]
     var body: some View {
         List {
             ForEach(objectives, id: \.title) { objective in
-                CardView(objective: objective)
+                NavigationLink(destination: EditView(trainingData: $trainingData, objective: objective)) {
+                    CardView(objective: objective)
+                }
             }
         }.listStyle(CarouselListStyle())
     }
@@ -20,6 +24,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(objectives: Objective.sampleData)
+        HomeView(trainingData: .constant(TrainingData.sampleData[0]), objectives: Objective.sampleData)
     }
 }
