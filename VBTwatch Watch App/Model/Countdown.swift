@@ -9,9 +9,11 @@ import Foundation
 
 class Countdown: ObservableObject {
     @Published var secondsRemaining: Int
+    @Published var canTransition: Bool
     private var timer: Timer?
-    init(secondsRemaining: Int) {
+    init(secondsRemaining: Int, canTransition: Bool) {
         self.secondsRemaining = secondsRemaining
+        self.canTransition = canTransition
     }
     
     func startCountdown() {
@@ -25,6 +27,7 @@ class Countdown: ObservableObject {
         if secondsRemaining == 0 {
             timer?.invalidate()
             timer = nil
+            canTransition = true
         }
     }
 }

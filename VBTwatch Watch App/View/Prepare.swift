@@ -9,7 +9,8 @@ import SwiftUI
 
 struct Prepare: View {
     @Binding var trainingData: TrainingData
-    @ObservedObject var countdown = Countdown(secondsRemaining: 5)
+    @ObservedObject var countdown = Countdown(secondsRemaining: 5, canTransition: false)
+    @State var canTransition = false
     var body: some View {
         VStack {
             Image(trainingData.objective.image)
@@ -17,6 +18,11 @@ struct Prepare: View {
                 .foregroundColor(.pink)
             Text("準備").font(.system(size: 20))
             Text("\(countdown.secondsRemaining)秒後に始まります").font(.system(size: 11))
+            if countdown.canTransition {
+                NavigationLink(destination: TrainingView(trainingData: $trainingData, currentSetCount: 1, currentRepCount: 0), isActive: $countdown.canTransition) {
+                    EmptyView()
+                }
+            }
         }.onAppear {
             countdown.startCountdown()
         }
