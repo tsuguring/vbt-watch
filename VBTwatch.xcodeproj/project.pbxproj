@@ -11,6 +11,8 @@
 		630110D129B98E350063F7BB /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110D029B98E350063F7BB /* FormView.swift */; };
 		630110D329B9D5700063F7BB /* Prepare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110D229B9D5700063F7BB /* Prepare.swift */; };
 		630110D529BAB5F40063F7BB /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110D429BAB5F40063F7BB /* Countdown.swift */; };
+		630110D929BACE250063F7BB /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110D829BACE250063F7BB /* SummaryView.swift */; };
+		630110DB29BAFBD80063F7BB /* SetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110DA29BAFBD80063F7BB /* SetDetailView.swift */; };
 		63204D8929B2CAA500D60018 /* VBTwatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204D8829B2CAA500D60018 /* VBTwatchApp.swift */; };
 		63204D8B29B2CAA500D60018 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204D8A29B2CAA500D60018 /* ContentView.swift */; };
 		63204D8D29B2CAA600D60018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63204D8C29B2CAA600D60018 /* Assets.xcassets */; };
@@ -60,6 +62,8 @@
 		630110D029B98E350063F7BB /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		630110D229B9D5700063F7BB /* Prepare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prepare.swift; sourceTree = "<group>"; };
 		630110D429BAB5F40063F7BB /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
+		630110D829BACE250063F7BB /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		630110DA29BAFBD80063F7BB /* SetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDetailView.swift; sourceTree = "<group>"; };
 		63204D8529B2CAA500D60018 /* VBTwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBTwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63204D8829B2CAA500D60018 /* VBTwatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBTwatchApp.swift; sourceTree = "<group>"; };
 		63204D8A29B2CAA500D60018 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			children = (
 				63204DBC29B72FEC00D60018 /* CardView.swift */,
 				630110D029B98E350063F7BB /* FormView.swift */,
+				630110DA29BAFBD80063F7BB /* SetDetailView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 				63204D9C29B2CAA600D60018 /* ContentView.swift */,
 				63204DC029B80DEE00D60018 /* ExplanationView.swift */,
 				63204DBA29B71DBC00D60018 /* HomeView.swift */,
+				630110D829BACE250063F7BB /* SummaryView.swift */,
 				630110D229B9D5700063F7BB /* Prepare.swift */,
 				630110CD29B98DD00063F7BB /* EditView.swift */,
 			);
@@ -310,6 +316,8 @@
 				630110CE29B98DD00063F7BB /* EditView.swift in Sources */,
 				630110D529BAB5F40063F7BB /* Countdown.swift in Sources */,
 				63204DBB29B71DBC00D60018 /* HomeView.swift in Sources */,
+				630110D929BACE250063F7BB /* SummaryView.swift in Sources */,
+				630110DB29BAFBD80063F7BB /* SetDetailView.swift in Sources */,
 				63204DAF29B2DB4800D60018 /* ExtendedRunTime.swift in Sources */,
 				63204DAD29B2CAED00D60018 /* ActivityClassifier.swift in Sources */,
 				637AFA5F29B98A0C00FF7CDD /* TrainingData.swift in Sources */,

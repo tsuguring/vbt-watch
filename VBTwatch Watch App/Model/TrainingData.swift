@@ -28,7 +28,7 @@ struct TrainingData: Identifiable {
 }
 
 extension TrainingData {
-    struct Set {
+    struct Set: Identifiable {
         let id: UUID
         var repCount: Int
         var reps: [Rep]
@@ -62,7 +62,7 @@ extension TrainingData {
         }
     }
 
-    struct Rep {
+    struct Rep: Identifiable {
         let id: UUID
         var velocity: Double
         var velocityLoss: Int
