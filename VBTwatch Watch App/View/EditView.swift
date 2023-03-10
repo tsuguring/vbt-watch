@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct EditView: View {
-    @State var trainingData = TrainingData.Data()
+    @Binding var trainingData: TrainingData
+    let objective: Objective
+    @State var data = TrainingData.Data()
     var body: some View {
         ScrollView {
-            Form(label: "重量", data: $trainingData.weight)
-            Form(label: "セット数", data: $trainingData.setCount)
-            Form(label: "上限速度低下率", data: $trainingData.maxVelocityLoss)
-            Button(action: {
-                
-            }, label: {
+            Form(label: "重量", data: $data.weight)
+            Form(label: "セット数", data: $data.setCount)
+            Form(label: "上限速度低下率", data: $data.maxVelocityLoss)
+            NavigationLink(destination: Prepare(trainingData: $trainingData).onAppear {
+                data.objective = objective
+                trainingData.update(from: data)
+            }) {
                 Text("START")
-            }).background(.pink)
+            }.background(.pink)
                 .cornerRadius(10)
                 .padding(.top)
         }
@@ -27,6 +30,6 @@ struct EditView: View {
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView()
+        EditView(trainingData: .constant(TrainingData.sampleData[0]), objective: Objective.sampleData[0])
     }
 }
