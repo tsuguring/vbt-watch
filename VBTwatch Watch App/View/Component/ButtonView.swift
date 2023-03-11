@@ -8,23 +8,49 @@
 import SwiftUI
 
 struct ButtonView: View {
-    @ObservedObject var activityClassifier = ActivityClassifier()
+    @ObservedObject var activityClassifier : ActivityClassifier
+    @Binding var canTransitionToSummary: Bool
+    let label: String
+    let color: Color
     var body: some View {
         HStack {
             Button(action: {
-                if activityClassifier.isStarted {
-                    self.activityClassifier.stopManageMotionData()
+                switch label {
+                case "終了":
+                    do { 
+                        activityClassifier.stopManageMotionData()
+                        canTransitionToSummary.toggle()
+                    }
+                case "中止", "一時停止":
+                    do {
+                        activityClassifier.stopManageMotionData()
+                    }
+                case "再開":
+                    do {
+                        activityClassifier.startManageMotionData()
+                    }
+                default:
+                    break
                 }
-                
             }) {
-                Text("\(Image(systemName: "xmark")) 終了").font(.footnote)
-            }.colorMultiply(.red)
-            Button(action: {
-                activityClassifier.isStarted ? self.activityClassifier.stopManageMotionData() : self.activityClassifier.startManageMotionData()
-            }) {
-                activityClassifier.isStarted ? Text("\(Image(systemName: "pause.fill")) 一時停止").font(.footnote) : Text("\(Image(systemName: "play.fill")) 再開").font(.footnote)
-            }.colorMultiply(.yellow)
+                HStack {
+                    Image(systemName: getImage(label: label)).font(.system(size: 11))
+                    Text(label).font(.system(size: 11))
+                }
+            }.colorMultiply(color)
         }
     }
 }
 
+func getImage(label: String) -> String {
+    switch label {
+    case "終了", "中止":
+        return "xmark"
+    case "一時停止":
+        return "pause.fill"
+    case "再開":
+        return "play.fill"
+    default:
+        return ""
+    }
+}

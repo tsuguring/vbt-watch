@@ -14,7 +14,7 @@ struct SummaryView: View {
             VStack {
                 HStack {
                     Image(trainingData.objective.image)
-                        .font(.system(size: 50))
+                        .font(.system(size: 45))
                         .foregroundColor(.pink)
                     VStack {
                         Text(trainingData.objective.title).font(.system(size: 14))
@@ -43,7 +43,7 @@ struct SummaryView: View {
                     .cornerRadius(10)
                     .padding(.top)
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

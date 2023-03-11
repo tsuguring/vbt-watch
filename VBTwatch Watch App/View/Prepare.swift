@@ -19,7 +19,7 @@ struct Prepare: View {
             Text("準備").font(.system(size: 20))
             Text("\(countdown.secondsRemaining)秒後に始まります").font(.system(size: 11))
             if countdown.canTransition {
-                NavigationLink(destination: TrainingView(trainingData: $trainingData, currentSetCount: 1, currentRepCount: 0), isActive: $countdown.canTransition) {
+                NavigationLink(destination: TrainingView(trainingData: $trainingData), isActive: $countdown.canTransition) {
                     EmptyView()
                 }
             }

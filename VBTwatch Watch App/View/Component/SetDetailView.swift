@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SetDetailView: View {
     let index: Int
-    let set: TrainingData.Set
+    let set: TrainingSet
     var body: some View {
         VStack {
             HStack {
@@ -18,7 +18,7 @@ struct SetDetailView: View {
             }.padding(.bottom, 2)
             HStack {
                 Text("レップ数").font(.system(size: 12))
-                Text(String(set.repCount))
+                Text(String(set.reps.count))
                 Spacer() 
             }
             HStack {
