@@ -30,7 +30,12 @@
 		63204DBD29B72FEC00D60018 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBC29B72FEC00D60018 /* CardView.swift */; };
 		63204DBF29B7693100D60018 /* Objective.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DBE29B7693100D60018 /* Objective.swift */; };
 		63204DC129B80DEE00D60018 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204DC029B80DEE00D60018 /* ExplanationView.swift */; };
+		63237AD629BC1F2A00BB0674 /* TrainingSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237AD529BC1F2A00BB0674 /* TrainingSet.swift */; };
+		63237AD829BC1F7600BB0674 /* TrainingRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237AD729BC1F7600BB0674 /* TrainingRep.swift */; };
+		63237ADB29BC58E700BB0674 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237ADA29BC58E700BB0674 /* Constant.swift */; };
 		637AFA5F29B98A0C00FF7CDD /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637AFA5E29B98A0C00FF7CDD /* TrainingData.swift */; };
+		FE436A0129BB164E00EDB139 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE436A0029BB164E00EDB139 /* ButtonView.swift */; };
+		FEA9C97C29B9BBCF004D442D /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA9C97B29B9BBCF004D442D /* TrainingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +88,12 @@
 		63204DBC29B72FEC00D60018 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		63204DBE29B7693100D60018 /* Objective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objective.swift; sourceTree = "<group>"; };
 		63204DC029B80DEE00D60018 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
+		63237AD529BC1F2A00BB0674 /* TrainingSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSet.swift; sourceTree = "<group>"; };
+		63237AD729BC1F7600BB0674 /* TrainingRep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingRep.swift; sourceTree = "<group>"; };
+		63237ADA29BC58E700BB0674 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		637AFA5E29B98A0C00FF7CDD /* TrainingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
+		FE436A0029BB164E00EDB139 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		FEA9C97B29B9BBCF004D442D /* TrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +120,7 @@
 				63204DBC29B72FEC00D60018 /* CardView.swift */,
 				630110D029B98E350063F7BB /* FormView.swift */,
 				630110DA29BAFBD80063F7BB /* SetDetailView.swift */,
+				FE436A0029BB164E00EDB139 /* ButtonView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -156,6 +167,7 @@
 			children = (
 				63204DB429B2E17700D60018 /* VBTwatch-Watch-App-Info.plist */,
 				63204D9A29B2CAA600D60018 /* VBTwatchApp.swift */,
+				63237AD929BC584C00BB0674 /* Utils */,
 				63204DB729B71D7500D60018 /* Model */,
 				63204DB929B71D8900D60018 /* View */,
 				63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */,
@@ -180,6 +192,8 @@
 				63204DB529B42B6C00D60018 /* VelocityMeasurement.swift */,
 				63204DAC29B2CAED00D60018 /* ActivityClassifier.swift */,
 				63204DBE29B7693100D60018 /* Objective.swift */,
+				63237AD529BC1F2A00BB0674 /* TrainingSet.swift */,
+				63237AD729BC1F7600BB0674 /* TrainingRep.swift */,
 				637AFA5E29B98A0C00FF7CDD /* TrainingData.swift */,
 				630110D429BAB5F40063F7BB /* Countdown.swift */,
 			);
@@ -196,8 +210,17 @@
 				630110D829BACE250063F7BB /* SummaryView.swift */,
 				630110D229B9D5700063F7BB /* Prepare.swift */,
 				630110CD29B98DD00063F7BB /* EditView.swift */,
+				FEA9C97B29B9BBCF004D442D /* TrainingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		63237AD929BC584C00BB0674 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				63237ADA29BC58E700BB0674 /* Constant.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,14 +334,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63237AD629BC1F2A00BB0674 /* TrainingSet.swift in Sources */,
 				63204DBF29B7693100D60018 /* Objective.swift in Sources */,
+				63237AD829BC1F7600BB0674 /* TrainingRep.swift in Sources */,
 				63204D9D29B2CAA600D60018 /* ContentView.swift in Sources */,
 				630110CE29B98DD00063F7BB /* EditView.swift in Sources */,
 				630110D529BAB5F40063F7BB /* Countdown.swift in Sources */,
+				FE436A0129BB164E00EDB139 /* ButtonView.swift in Sources */,
 				63204DBB29B71DBC00D60018 /* HomeView.swift in Sources */,
 				630110D929BACE250063F7BB /* SummaryView.swift in Sources */,
 				630110DB29BAFBD80063F7BB /* SetDetailView.swift in Sources */,
 				63204DAF29B2DB4800D60018 /* ExtendedRunTime.swift in Sources */,
+				FEA9C97C29B9BBCF004D442D /* TrainingView.swift in Sources */,
 				63204DAD29B2CAED00D60018 /* ActivityClassifier.swift in Sources */,
 				637AFA5F29B98A0C00FF7CDD /* TrainingData.swift in Sources */,
 				63204DBD29B72FEC00D60018 /* CardView.swift in Sources */,
@@ -326,6 +353,7 @@
 				630110D129B98E350063F7BB /* FormView.swift in Sources */,
 				63204D9B29B2CAA600D60018 /* VBTwatchApp.swift in Sources */,
 				630110D329B9D5700063F7BB /* Prepare.swift in Sources */,
+				63237ADB29BC58E700BB0674 /* Constant.swift in Sources */,
 				63204DC129B80DEE00D60018 /* ExplanationView.swift in Sources */,
 				63204DB629B42B6C00D60018 /* VelocityMeasurement.swift in Sources */,
 			);
