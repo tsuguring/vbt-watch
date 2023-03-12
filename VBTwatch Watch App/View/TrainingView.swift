@@ -144,17 +144,18 @@ struct TrainingView: View {
     }
     
     func finishIfNeeded(velocityLoss: Int) {
-        if velocityLoss >= trainingData.maxVelocityLoss {
-            activityClassifier.stopManageMotionData()
-            print(currentSet)
-            storeSetData()
-            print(data.sets)
-            if data.sets.count < trainingData.setCount {
-                // transition to RestView
-            } else {
-                trainingData.update(from: data)
-                canTransitionToSummary = true
-            }
+        if velocityLoss < trainingData.maxVelocityLoss {
+            return
+        }
+        activityClassifier.stopManageMotionData()
+        print(currentSet)
+        storeSetData()
+        print(data.sets)
+        if data.sets.count < trainingData.setCount {
+            // transition to RestView
+        } else {
+            trainingData.update(from: data)
+            canTransitionToSummary = true
         }
     }
 }
