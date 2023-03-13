@@ -8,10 +8,12 @@
 import Foundation
 import AVFoundation
 
-func speechVelocity(velocity: Double) -> AVSpeechUtterance {
-    let text = "\(velocity)メートル毎秒です"
+let synthesizer = AVSpeechSynthesizer()
+
+func speechVelocity(velocity: Double) {
+    let text = "\(velocity)"
     let utterance = AVSpeechUtterance(string: text)
     utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
     utterance.rate = 0.55
-    return utterance
+    synthesizer.speak(utterance)
 }

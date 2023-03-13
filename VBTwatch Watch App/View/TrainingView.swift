@@ -24,7 +24,6 @@ struct TrainingView: View {
             }
         }
     }
-    let synthesizer = AVSpeechSynthesizer()
     
     var body: some View {
         ScrollView {
@@ -93,8 +92,7 @@ struct TrainingView: View {
             }
         }.onChange(of: activityClassifier.velocityPerRep, perform: { newVelocity in
             storeRepData(velocity: newVelocity, velocityLoss: calculateVelocityLoss(velocity: newVelocity), targetError: calculateTargetError(velocity: newVelocity))
-            let utterance = speechVelocity(velocity: roundVelocity(velocity: newVelocity))
-            synthesizer.speak(utterance)
+            speechVelocity(velocity: roundVelocity(velocity: newVelocity))
             finishIfNeeded(velocityLoss: calculateVelocityLoss(velocity: newVelocity))
         })
         .onAppear {
