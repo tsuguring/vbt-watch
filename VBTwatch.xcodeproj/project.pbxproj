@@ -35,6 +35,7 @@
 		63237ADB29BC58E700BB0674 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237ADA29BC58E700BB0674 /* Constant.swift */; };
 		637AFA5F29B98A0C00FF7CDD /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637AFA5E29B98A0C00FF7CDD /* TrainingData.swift */; };
 		FE436A0129BB164E00EDB139 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE436A0029BB164E00EDB139 /* ButtonView.swift */; };
+		FE5D888229BEB98C008F94E9 /* Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D888129BEB98C008F94E9 /* Velocity.swift */; };
 		FEA9C97C29B9BBCF004D442D /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA9C97B29B9BBCF004D442D /* TrainingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		63237ADA29BC58E700BB0674 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		637AFA5E29B98A0C00FF7CDD /* TrainingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
 		FE436A0029BB164E00EDB139 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		FE5D888129BEB98C008F94E9 /* Velocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Velocity.swift; sourceTree = "<group>"; };
 		FEA9C97B29B9BBCF004D442D /* TrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 				63204DB429B2E17700D60018 /* VBTwatch-Watch-App-Info.plist */,
 				63204D9A29B2CAA600D60018 /* VBTwatchApp.swift */,
 				63237AD929BC584C00BB0674 /* Utils */,
+				FE5D888029BEB873008F94E9 /* Speech */,
 				63204DB729B71D7500D60018 /* Model */,
 				63204DB929B71D8900D60018 /* View */,
 				63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */,
@@ -221,6 +224,14 @@
 				63237ADA29BC58E700BB0674 /* Constant.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FE5D888029BEB873008F94E9 /* Speech */ = {
+			isa = PBXGroup;
+			children = (
+				FE5D888129BEB98C008F94E9 /* Velocity.swift */,
+			);
+			path = Speech;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +351,7 @@
 				63204D9D29B2CAA600D60018 /* ContentView.swift in Sources */,
 				630110CE29B98DD00063F7BB /* EditView.swift in Sources */,
 				630110D529BAB5F40063F7BB /* Countdown.swift in Sources */,
+				FE5D888229BEB98C008F94E9 /* Velocity.swift in Sources */,
 				FE436A0129BB164E00EDB139 /* ButtonView.swift in Sources */,
 				63204DBB29B71DBC00D60018 /* HomeView.swift in Sources */,
 				630110D929BACE250063F7BB /* SummaryView.swift in Sources */,
@@ -487,7 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 9QU9236F4P;
+				DEVELOPMENT_TEAM = H84MQLLKK7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "VBTwatch-Watch-App-Info.plist";
@@ -518,7 +530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 9QU9236F4P;
+				DEVELOPMENT_TEAM = H84MQLLKK7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "VBTwatch-Watch-App-Info.plist";
@@ -551,7 +563,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch/Preview Content\"";
-				DEVELOPMENT_TEAM = 9QU9236F4P;
+				DEVELOPMENT_TEAM = H84MQLLKK7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = VBTwatch;
@@ -584,7 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch/Preview Content\"";
-				DEVELOPMENT_TEAM = 9QU9236F4P;
+				DEVELOPMENT_TEAM = H84MQLLKK7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = VBTwatch;
