@@ -15,6 +15,7 @@ struct VBTwatch_Watch_AppApp: App {
         WindowGroup {
             NavigationView{
                 HomeView(trainingData: $trainingData, objectives: objectives)
+//                TrainingView(trainingData: $trainingData, currentSetCount: 1, currentRepCount: 0, maxVelocity: 0.0)
             }
         }
     }
