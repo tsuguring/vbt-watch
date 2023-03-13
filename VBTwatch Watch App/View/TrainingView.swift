@@ -116,7 +116,7 @@ struct TrainingView: View {
             Button("いいえ") {
             }
         } message: {
-            Text("挙上速度と目標速度の差が\(roundVelocity(velocity: currentRep.targetError))と大きいです。")
+            Text("挙上速度と目標速度の差が\(currentRep.targetError)と大きいです。")
         }
         .onAppear {
             activityClassifier.startManageMotionData()
@@ -138,7 +138,7 @@ struct TrainingView: View {
     }
     
     func calculateTargetError(velocity: Double) -> Double {
-        return velocity - trainingData.objective.velocity
+        return roundVelocity(velocity: velocity-trainingData.objective.velocity)
     }
     
     func getMaxVelocity() -> Double {
@@ -176,8 +176,9 @@ struct TrainingView: View {
     func alertIfNeeded(targetError: Double) {
         let MAX_PERMISSIBLE_ERROR = 0.1
         if abs(targetError) >  MAX_PERMISSIBLE_ERROR {
-            showingAlert = true
             self.activityClassifier.stopManageMotionData()
+            WKInterfaceDevice.current().play(.notification)
+            showingAlert = true
         }
     }
     
@@ -186,9 +187,7 @@ struct TrainingView: View {
             return
         }
         activityClassifier.stopManageMotionData()
-        print(currentSet)
         storeSetData()
-        print(data.sets)
         if data.sets.count < trainingData.setCount {
             // transition to RestView
         } else {
