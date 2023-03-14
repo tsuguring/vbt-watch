@@ -14,13 +14,14 @@ struct SummaryView: View {
             VStack {
                 HStack {
                     Image(trainingData.objective.image)
-                        .font(.system(size: 45))
+                        .font(.system(size: 50))
                         .foregroundColor(.pink)
-                    VStack {
-                        Text(trainingData.objective.title).font(.system(size: 14))
-                        Text("重量 \(trainingData.weight) kg").font(.system(size: 14))
-                    }
+                    Spacer()
                 }
+                Text("\(trainingData.objective.title)").font(.system(size: 16))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text("重量 \(trainingData.weight) kg").font(.system(size: 16))
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 Divider()
                 VStack {
                     HStack {
@@ -37,7 +38,7 @@ struct SummaryView: View {
                     SetDetailView(index: setIndex+1, set: set)
                     Divider()
                 }
-                NavigationLink(destination: HomeView(trainingData: $trainingData, objectives: Objective.sampleData)) {
+                NavigationLink(destination: HomeView()) {
                     Text("完了")
                 }.background(.pink)
                     .cornerRadius(10)

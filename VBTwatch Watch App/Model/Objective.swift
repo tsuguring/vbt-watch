@@ -17,7 +17,7 @@ struct Objective {
 extension Objective {
     static let sampleData: [Objective] =
     [
-        Objective(title: "筋肥大", velocity: 0.46, perRM: 80, image: "custom.figure.strengthtraining.traditional"),
-        Objective(title: "スピード筋力", velocity: 0.94, perRM: 50, image: "custom.figure.core.training")
+        Objective(title: "筋肥大", velocity: 0.65, perRM: 70, image: "figure.strengthtraining.traditional"),
+        Objective(title: "スピード筋力", velocity: 1.1, perRM: 40, image: "figure.core.training")
     ]
 }

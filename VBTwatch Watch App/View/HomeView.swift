@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Binding var trainingData: TrainingData
+    @State var trainingData: TrainingData = TrainingData.sampleData[0]
     @State var data = TrainingData.Data()
-    let objectives: [Objective]
+    let objectives: [Objective] = Objective.sampleData
     var body: some View {
         List {
             ForEach(objectives, id: \.title) { objective in
@@ -18,12 +18,14 @@ struct HomeView: View {
                     CardView(objective: objective)
                 }
             }
-        }.listStyle(CarouselListStyle())
+        }
+        .listStyle(CarouselListStyle())
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(trainingData: .constant(TrainingData.sampleData[0]), objectives: Objective.sampleData)
+        HomeView()
     }
 }

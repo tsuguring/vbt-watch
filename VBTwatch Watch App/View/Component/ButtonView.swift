@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ButtonView: View {
     @ObservedObject var activityClassifier : ActivityClassifier
-    @Binding var canTransitionToSummary: Bool
+    @Binding var canTransition: Bool
     let label: String
     let color: Color
     var body: some View {
@@ -19,7 +19,7 @@ struct ButtonView: View {
                 case "終了":
                     do { 
                         activityClassifier.stopManageMotionData()
-                        canTransitionToSummary.toggle()
+                        canTransition.toggle()
                     }
                 case "中止", "一時停止":
                     do {

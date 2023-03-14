@@ -12,10 +12,7 @@ struct TrainingView: View {
     @Binding var trainingData: TrainingData
     @State var data = TrainingData.Data()
     @State var canTransitionToSummary = false
-    @State var canTransitionToHome = false
-    @State var showingAlert = false
     @State var currentSet = TrainingSet.sampleSet
-    @State var isFirst = true
     var currentRep: TrainingRep {
         get {
             if currentSet.reps.count != 0 {
@@ -26,12 +23,11 @@ struct TrainingView: View {
             }
         }
     }
-    
     var body: some View {
         ScrollView {
             VStack {
                 HStack {
-                    Text("\(data.sets.count+1)/\(trainingData.setCount)").font(.system(size: 20))
+                    Text("\(data.sets.count)/\(trainingData.setCount)").font(.system(size: 20))
                     Text("セット")
                     Spacer()
                 }
@@ -84,63 +80,35 @@ struct TrainingView: View {
                 }
             }.padding()
             HStack {
-                ButtonView(activityClassifier: activityClassifier, canTransition: $canTransitionToSummary, label: "終了", color: Color.red)
-                ButtonView(activityClassifier: activityClassifier, canTransition: $canTransitionToSummary, label: activityClassifier.isStarted ? "一時停止" : "再開", color: Color.yellow)
+                ButtonView(activityClassifier: activityClassifier, canTransitionToSummary: $canTransitionToSummary, label: "終了", color: Color.red)
+                ButtonView(activityClassifier: activityClassifier, canTransitionToSummary: $canTransitionToSummary, label: activityClassifier.isStarted ? "一時停止" : "再開", color: Color.yellow)
             }
             if canTransitionToSummary {
                 NavigationLink(destination: SummaryView(trainingData: $trainingData), isActive: $canTransitionToSummary) {
                     EmptyView()
                 }
             }
-            if canTransitionToHome {
-                NavigationLink(destination: HomeView(), isActive: $canTransitionToHome) {
-                    EmptyView()
-                }
-            }
         }.onChange(of: activityClassifier.velocityPerRep, perform: { newVelocity in
-            let velocityLoss = calculateVelocityLoss(velocity: newVelocity)
-            let targetError = calculateTargetError(velocity: newVelocity)
-            if isFirst {
-                isFirst = false
-                alertIfNeeded(targetError: targetError)
-            }
-            speechVelocity(velocity: roundVelocity(velocity: newVelocity))
-            storeRepData(velocity: newVelocity, velocityLoss: velocityLoss, targetError: targetError)
-            finishIfNeeded(velocityLoss: velocityLoss)
+            storeRepData(velocity: newVelocity, velocityLoss: calculateVelocityLoss(velocity: newVelocity), targetError: calculateTargetError(velocity: newVelocity))
+            finishIfNeeded(velocityLoss: calculateVelocityLoss(velocity: newVelocity))
         })
-        .alert(
-            "目的や重量を変更しますか？",
-            isPresented: $showingAlert
-        ) {
-            Button("はい") {
-                canTransitionToHome = true
-            }
-            Button("いいえ") {
-            }
-        } message: {
-            Text("挙上速度と目標速度の差が\(String(currentRep.targetError))と大きいです。")
-        }
         .onAppear {
             activityClassifier.startManageMotionData()
         }
         .navigationBarBackButtonHidden(true)
     }
     
+    
     func calculateVelocityLoss(velocity: Double) -> Int {
         let maxVelocity = getMaxVelocity()
-        if maxVelocity == 0 { return 0 }
-        
-        let variation = roundVelocity(velocity: maxVelocity) - roundVelocity(velocity:velocity)
-        if variation < 0 {
-            return Int(variation / roundVelocity(velocity: velocity) * 100)
+        if maxVelocity != 0 {
+            return Int((roundVelocity(velocity: maxVelocity) - roundVelocity(velocity:velocity)) / roundVelocity(velocity: maxVelocity) * 100)
         }
-        else {
-            return Int(variation / roundVelocity(velocity: maxVelocity) * 100)
-        }
+        else { return 0 }
     }
     
     func calculateTargetError(velocity: Double) -> Double {
-        return roundVelocity(velocity: velocity-trainingData.objective.velocity)
+        return trainingData.objective.velocity - velocity
     }
     
     func getMaxVelocity() -> Double {
@@ -175,21 +143,14 @@ struct TrainingView: View {
         currentSet = TrainingSet.sampleSet
     }
     
-    func alertIfNeeded(targetError: Double) {
-        let MAX_PERMISSIBLE_ERROR = 0.15
-        if abs(targetError) >  MAX_PERMISSIBLE_ERROR {
-            self.activityClassifier.stopManageMotionData()
-            WKInterfaceDevice.current().play(.notification)
-            showingAlert = true
-        }
-    }
-    
     func finishIfNeeded(velocityLoss: Int) {
         if velocityLoss < trainingData.maxVelocityLoss {
             return
         }
         activityClassifier.stopManageMotionData()
+        print(currentSet)
         storeSetData()
+        print(data.sets)
         if data.sets.count < trainingData.setCount {
             // transition to RestView
         } else {
