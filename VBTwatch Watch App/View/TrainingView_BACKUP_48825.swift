@@ -13,7 +13,7 @@ struct TrainingView: View {
     @State var data = TrainingData.Data()
     @State var canTransitionToSummary = false
     @State var canTransitionToHome = false
-    @State var showingAlert = false
+    @State var showingAlert = true
     @State var currentSet = TrainingSet.sampleSet
     @State var isFirst = true
     var currentRep: TrainingRep {
@@ -31,7 +31,7 @@ struct TrainingView: View {
         ScrollView {
             VStack {
                 HStack {
-                    Text("\(data.sets.count+1)/\(trainingData.setCount)").font(.system(size: 20))
+                    Text("\(data.sets.count)/\(trainingData.setCount)").font(.system(size: 20))
                     Text("セット")
                     Spacer()
                 }
@@ -100,13 +100,13 @@ struct TrainingView: View {
         }.onChange(of: activityClassifier.velocityPerRep, perform: { newVelocity in
             let velocityLoss = calculateVelocityLoss(velocity: newVelocity)
             let targetError = calculateTargetError(velocity: newVelocity)
+            storeRepData(velocity: newVelocity, velocityLoss: velocityLoss, targetError: targetError)
+            finishIfNeeded(velocityLoss: velocityLoss)
             if isFirst {
                 isFirst = false
                 alertIfNeeded(targetError: targetError)
             }
             speechVelocity(velocity: roundVelocity(velocity: newVelocity))
-            storeRepData(velocity: newVelocity, velocityLoss: velocityLoss, targetError: targetError)
-            finishIfNeeded(velocityLoss: velocityLoss)
         })
         .alert(
             "目的や重量を変更しますか？",
