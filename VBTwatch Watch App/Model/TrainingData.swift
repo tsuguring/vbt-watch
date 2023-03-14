@@ -54,7 +54,7 @@ extension TrainingData {
 extension TrainingData {
     static let sampleData: [TrainingData] =
     [
-        TrainingData(objective: Objective(title: "筋肥大", velocity: 0.46, perRM: 80, image: "custom.figure.strengthtraining.traditional"), weight: 50, setCount: 2, sets: [TrainingSet(reps: [], averageVelocity: 0.41, maxVelocity: 0.55), TrainingSet(reps: [TrainingRep(velocity: 0.34, velocityLoss: 20, targetError: 1.12)], averageVelocity: 0.34, maxVelocity: 0.45)], maxVelocityLoss: 30, date: Date()),
-        TrainingData(objective: Objective(title: "スピード筋力", velocity: 0.94, perRM: 50, image: "custom.figure.core.training"), weight: 30, setCount: 3, sets: [], maxVelocityLoss: 25, date: Date())
+        TrainingData(objective: Objective(title: "筋肥大", velocity: 0.46, perRM: 80, image: "figure.strengthtraining.traditional"), weight: 50, setCount: 2, sets: [TrainingSet(reps: [], averageVelocity: 0.41, maxVelocity: 0.55), TrainingSet(reps: [TrainingRep(velocity: 0.34, velocityLoss: 20, targetError: 1.12)], averageVelocity: 0.34, maxVelocity: 0.45)], maxVelocityLoss: 30, date: Date()),
+        TrainingData(objective: Objective(title: "スピード筋力", velocity: 0.94, perRM: 50, image: "figure.core.training"), weight: 30, setCount: 3, sets: [], maxVelocityLoss: 25, date: Date())
     ]
 }

@@ -13,9 +13,11 @@ struct TrainingView: View {
     @State var data = TrainingData.Data()
     @State var canTransitionToSummary = false
     @State var canTransitionToHome = false
+    @State var canTransitionToRest = false
     @State var showingAlert = false
     @State var currentSet = TrainingSet.sampleSet
     @State var isFirst = true
+    @State var isBackFromAlert = false
     var currentRep: TrainingRep {
         get {
             if currentSet.reps.count != 0 {
@@ -26,12 +28,15 @@ struct TrainingView: View {
             }
         }
     }
+    var currentSetCount: Int {
+        get { data.sets.count + 1 }
+    }
     
     var body: some View {
         ScrollView {
             VStack {
                 HStack {
-                    Text("\(data.sets.count+1)/\(trainingData.setCount)").font(.system(size: 20))
+                    Text("\(currentSetCount)/\(trainingData.setCount)").font(.system(size: 20))
                     Text("セット")
                     Spacer()
                 }
@@ -97,14 +102,21 @@ struct TrainingView: View {
                     EmptyView()
                 }
             }
+            if canTransitionToRest {
+                NavigationLink(destination: RestView(), isActive: $canTransitionToRest) {
+                    EmptyView()
+                }
+            }
         }.onChange(of: activityClassifier.velocityPerRep, perform: { newVelocity in
+            if newVelocity == 0.0 { return }
             let velocityLoss = calculateVelocityLoss(velocity: newVelocity)
             let targetError = calculateTargetError(velocity: newVelocity)
             if isFirst {
                 isFirst = false
                 alertIfNeeded(targetError: targetError)
             }
-            speechVelocity(velocity: roundVelocity(velocity: newVelocity))
+            print(newVelocity)
+            speechText(text: String(roundVelocity(velocity: newVelocity)))
             storeRepData(velocity: newVelocity, velocityLoss: velocityLoss, targetError: targetError)
             finishIfNeeded(velocityLoss: velocityLoss)
         })
@@ -116,12 +128,18 @@ struct TrainingView: View {
                 canTransitionToHome = true
             }
             Button("いいえ") {
+                isBackFromAlert = true
             }
         } message: {
             Text("挙上速度と目標速度の差が\(String(currentRep.targetError))と大きいです。")
         }
         .onAppear {
             activityClassifier.startManageMotionData()
+            if !isBackFromAlert {
+                WKInterfaceDevice.current().play(.notification)
+                speechText(text: "\(currentSetCount)レップめ開始")
+            }
+            isBackFromAlert = false
         }
         .navigationBarBackButtonHidden(true)
     }
@@ -168,10 +186,10 @@ struct TrainingView: View {
     func storeSetData() {
         let set = TrainingSet(reps: currentSet.reps, averageVelocity: calculateAverageVelocity(), maxVelocity: getMaxVelocity())
         data.sets.append(set)
-        initializeSetData()
+        initializeCurrentSetData()
     }
     
-    func initializeSetData() {
+    func initializeCurrentSetData() {
         currentSet = TrainingSet.sampleSet
     }
     
@@ -185,13 +203,13 @@ struct TrainingView: View {
     }
     
     func finishIfNeeded(velocityLoss: Int) {
-        if velocityLoss < trainingData.maxVelocityLoss {
-            return
-        }
+        if velocityLoss < trainingData.maxVelocityLoss { return }
         activityClassifier.stopManageMotionData()
         storeSetData()
+        WKInterfaceDevice.current().play(.notification)
+        speechText(text: "\(data.sets.count)レップめ終了")
         if data.sets.count < trainingData.setCount {
-            // transition to RestView
+            canTransitionToRest = true
         } else {
             trainingData.update(from: data)
             canTransitionToSummary = true
