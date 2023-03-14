@@ -13,7 +13,7 @@ struct TrainingView: View {
     @State var data = TrainingData.Data()
     @State var canTransitionToSummary = false
     @State var canTransitionToHome = false
-    @State var showingAlert = false
+    @State var showingAlert = true
     @State var currentSet = TrainingSet.sampleSet
     @State var isFirst = true
     var currentRep: TrainingRep {
@@ -116,7 +116,7 @@ struct TrainingView: View {
             Button("いいえ") {
             }
         } message: {
-            Text("挙上速度と目標速度の差が\(currentRep.targetError)と大きいです。")
+            Text("挙上速度と目標速度の差が\(String(currentRep.targetError))と大きいです。")
         }
         .onAppear {
             activityClassifier.startManageMotionData()
@@ -174,7 +174,7 @@ struct TrainingView: View {
     }
     
     func alertIfNeeded(targetError: Double) {
-        let MAX_PERMISSIBLE_ERROR = 0.1
+        let MAX_PERMISSIBLE_ERROR = 0.15
         if abs(targetError) >  MAX_PERMISSIBLE_ERROR {
             self.activityClassifier.stopManageMotionData()
             WKInterfaceDevice.current().play(.notification)
