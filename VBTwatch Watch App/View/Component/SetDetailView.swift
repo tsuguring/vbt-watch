@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SetDetailView: View {
     let index: Int
-    let set: TrainingSet
+    let set: SetModel
     var body: some View {
         VStack {
             HStack {
@@ -37,6 +37,6 @@ struct SetDetailView: View {
 
 struct SetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SetDetailView(index: 1, set: TrainingData.sampleData[0].sets[0])
+        SetDetailView(index: 1, set: TrainingModelView.sampleData[0].sets[0])
     }
 }

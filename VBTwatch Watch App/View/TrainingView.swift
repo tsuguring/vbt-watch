@@ -9,22 +9,22 @@ import SwiftUI
 
 struct TrainingView: View {
     @ObservedObject var activityClassifier = ActivityClassifier()
-    @Binding var trainingData: TrainingData
-    @State var data = TrainingData.Data()
+    @Binding var trainingData: TrainingModelView
+    @State var data = TrainingModelView.Data()
     @State var canTransitionToSummary = false
     @State var canTransitionToHome = false
     @State var canTransitionToRest = false
     @State var showingAlert = false
-    @State var currentSet = TrainingSet.sampleSet
+    @State var currentSet = SetModel.sampleSet
     @State var isFirst = true
     @State var isBackFromAlert = false
-    var currentRep: TrainingRep {
+    var currentRep: RepModel {
         get {
             if currentSet.reps.count != 0 {
                 return currentSet.reps[currentSet.reps.count-1]
             }
             else {
-                return TrainingRep.sampleRep
+                return RepModel.sampleRep
             }
         }
     }
@@ -115,7 +115,6 @@ struct TrainingView: View {
                 isFirst = false
                 alertIfNeeded(targetError: targetError)
             }
-            print(newVelocity)
             speechText(text: String(roundVelocity(velocity: newVelocity)))
             storeRepData(velocity: newVelocity, velocityLoss: velocityLoss, targetError: targetError)
             finishIfNeeded(velocityLoss: velocityLoss)
@@ -137,7 +136,7 @@ struct TrainingView: View {
             activityClassifier.startManageMotionData()
             if !isBackFromAlert {
                 WKInterfaceDevice.current().play(.notification)
-                speechText(text: "\(currentSetCount)レップめ開始")
+                speechText(text: "\(currentSetCount)セットめ開始")
             }
             isBackFromAlert = false
         }
@@ -179,18 +178,18 @@ struct TrainingView: View {
     }
     
     func storeRepData(velocity: Double, velocityLoss: Int, targetError: Double) {
-        let rep = TrainingRep(velocity: velocity, velocityLoss: velocityLoss, targetError: targetError)
+        let rep = RepModel(velocity: velocity, velocityLoss: velocityLoss, targetError: targetError)
         currentSet.reps.append(rep)
     }
     
     func storeSetData() {
-        let set = TrainingSet(reps: currentSet.reps, averageVelocity: calculateAverageVelocity(), maxVelocity: getMaxVelocity())
+        let set = SetModel(reps: currentSet.reps, averageVelocity: calculateAverageVelocity(), maxVelocity: getMaxVelocity())
         data.sets.append(set)
         initializeCurrentSetData()
     }
     
     func initializeCurrentSetData() {
-        currentSet = TrainingSet.sampleSet
+        currentSet = SetModel.sampleSet
     }
     
     func alertIfNeeded(targetError: Double) {
@@ -207,7 +206,7 @@ struct TrainingView: View {
         activityClassifier.stopManageMotionData()
         storeSetData()
         WKInterfaceDevice.current().play(.notification)
-        speechText(text: "\(data.sets.count)レップめ終了")
+        speechText(text: "\(data.sets.count)セットめ終了")
         if data.sets.count < trainingData.setCount {
             canTransitionToRest = true
         } else {
@@ -219,6 +218,6 @@ struct TrainingView: View {
 
 struct TrainingView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingView(trainingData: .constant(TrainingData.sampleData[0]))
+        TrainingView(trainingData: .constant(TrainingModelView.sampleData[0]))
     }
 }

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var trainingData: TrainingData = TrainingData.sampleData[0]
-    @State var data = TrainingData.Data()
+    @State var trainingData: TrainingModelView = TrainingModelView.sampleData[0]
+    @State var data = TrainingModelView.Data()
     let objectives: [Objective] = Objective.sampleData
     var body: some View {
         List {
