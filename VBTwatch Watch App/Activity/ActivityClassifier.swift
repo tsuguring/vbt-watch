@@ -11,7 +11,6 @@ import CoreMotion
 
 class ActivityClassifier: ObservableObject {
     @Published var isStarted = false
-    @Published var rep = 0
     @Published var velocityPerRep = 0.0
     
     struct ModelConstants {
@@ -107,7 +106,6 @@ class ActivityClassifier: ObservableObject {
         else if prediction.label != "BenchPress" && lastLavel == "BenchPress" {
             velocityPerRep = velocityMeasurement.velocity
             velocityMeasurement.initializeVelocityData()
-            self.rep += 1
             print("1Repあたりの速度", "\(velocityPerRep)m/s")
             isBenchPress = false
         }
