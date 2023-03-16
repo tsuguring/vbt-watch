@@ -149,10 +149,10 @@ struct TrainingView: View {
         
         let variation = roundVelocity(velocity: maxVelocity) - roundVelocity(velocity:velocity)
         if variation < 0 {
-            return Int(variation / roundVelocity(velocity: velocity) * 100)
+            return changePercent(denominator: variation, molecule: velocity)
         }
         else {
-            return Int(variation / roundVelocity(velocity: maxVelocity) * 100)
+            return changePercent(denominator: variation, molecule: maxVelocity)
         }
     }
     

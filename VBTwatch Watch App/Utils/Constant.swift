@@ -10,3 +10,7 @@ import Foundation
 func roundVelocity(velocity: Double) -> Double {
     return round(velocity*100)/100
 }
+
+func changePercent(denominator: Double, molecule: Double) -> Int {
+    return Int(molecule / denominator * 100)
+}
