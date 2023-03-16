@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SummaryView: View {
-    @Binding var trainingData: TrainingData
+    @Binding var trainingData: TrainingModelView
     var body: some View {
         ScrollView {
             VStack {
@@ -50,6 +50,6 @@ struct SummaryView: View {
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryView(trainingData: .constant(TrainingData.sampleData[0]))
+        SummaryView(trainingData: .constant(TrainingModelView.sampleData[0]))
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Prepare: View {
-    @Binding var trainingData: TrainingData
+    @Binding var trainingData: TrainingModelView
     @ObservedObject var countdown = Countdown(secondsRemaining: 5, canTransition: false)
     var body: some View {
         VStack {
@@ -30,6 +30,6 @@ struct Prepare: View {
 
 struct Prepare_Previews: PreviewProvider {
     static var previews: some View {
-        Prepare(trainingData: .constant(TrainingData.sampleData[0]))
+        Prepare(trainingData: .constant(TrainingModelView.sampleData[0]))
     }
 }

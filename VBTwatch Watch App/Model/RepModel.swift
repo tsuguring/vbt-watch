@@ -1,5 +1,5 @@
 //
-//  TrainingRep.swift
+//  RepModel.swift
 //  VBTwatch Watch App
 //
 //  Created by Ryo Yoshitsugu on R 5/03/11.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TrainingRep: Identifiable {
+struct RepModel: Identifiable {
     let id: UUID
     var velocity: Double
     var velocityLoss: Int
@@ -20,5 +20,5 @@ struct TrainingRep: Identifiable {
         self.targetError = targetError
     }
     
-    static let sampleRep: TrainingRep = TrainingRep(velocity: 0.00, velocityLoss: 0, targetError: 0.00)
+    static let sampleRep: RepModel = RepModel(velocity: 0.00, velocityLoss: 0, targetError: 0.00)
 }

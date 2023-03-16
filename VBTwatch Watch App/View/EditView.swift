@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct EditView: View {
-    @Binding var trainingData: TrainingData
+    @Binding var trainingData: TrainingModelView
     let objective: Objective
-    @State var data = TrainingData.Data()
+    @State var data = TrainingModelView.Data()
     var body: some View {
         ScrollView {
             Form(label: "重量", data: $data.weight)
@@ -30,6 +30,6 @@ struct EditView: View {
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView(trainingData: .constant(TrainingData.sampleData[0]), objective: Objective.sampleData[0])
+        EditView(trainingData: .constant(TrainingModelView.sampleData[0]), objective: Objective.sampleData[0])
     }
 }
