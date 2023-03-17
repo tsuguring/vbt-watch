@@ -149,10 +149,10 @@ struct TrainingView: View {
         
         let variation = roundVelocity(velocity: maxVelocity) - roundVelocity(velocity:velocity)
         if variation < 0 {
-            return changePercent(denominator: variation, molecule: velocity)
+            return changePercent(denominator: velocity, molecule: variation)
         }
         else {
-            return changePercent(denominator: variation, molecule: maxVelocity)
+            return changePercent(denominator: maxVelocity, molecule: variation)
         }
     }
     
@@ -201,6 +201,14 @@ struct TrainingView: View {
         }
     }
     
+    func updateData() {
+        data.objective = trainingData.objective
+        data.weight = trainingData.weight
+        data.setCount = trainingData.setCount
+        data.maxVelocityLoss = trainingData.maxVelocityLoss
+        trainingData.update(from: data)
+    }
+    
     func finishIfNeeded(velocityLoss: Int) {
         if velocityLoss < trainingData.maxVelocityLoss { return }
         activityClassifier.stopManageMotionData()
@@ -210,7 +218,7 @@ struct TrainingView: View {
         if data.sets.count < trainingData.setCount {
             canTransitionToRest = true
         } else {
-            trainingData.update(from: data)
+            updateData()
             canTransitionToSummary = true
         }
     }

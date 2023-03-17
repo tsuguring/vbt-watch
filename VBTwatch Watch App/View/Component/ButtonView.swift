@@ -19,7 +19,7 @@ struct ButtonView: View {
                 case "終了":
                     do { 
                         activityClassifier.stopManageMotionData()
-                        canTransition.toggle()
+                        canTransition = true
                     }
                 case "中止", "一時停止":
                     do {

@@ -22,7 +22,8 @@ struct Prepare: View {
                     EmptyView()
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             countdown.startCountdown()
         }
     }

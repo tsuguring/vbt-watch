@@ -12,5 +12,5 @@ func roundVelocity(velocity: Double) -> Double {
 }
 
 func changePercent(denominator: Double, molecule: Double) -> Int {
-    return Int(molecule / denominator * 100)
+    return Int(roundVelocity(velocity: molecule) / denominator * 100)
 }
