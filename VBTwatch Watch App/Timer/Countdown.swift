@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WatchKit
 
 class Countdown: ObservableObject {
     @Published var secondsRemaining: Int
@@ -21,12 +22,16 @@ class Countdown: ObservableObject {
             self.countdownTimer()
         }
     }
+
+    func stopCountdown() {
+        timer?.invalidate()
+        timer = nil
+    }
     
     func countdownTimer() {
         secondsRemaining -= 1
         if secondsRemaining == 0 {
-            timer?.invalidate()
-            timer = nil
+            stopCountdown()
             canTransition = true
         }
     }

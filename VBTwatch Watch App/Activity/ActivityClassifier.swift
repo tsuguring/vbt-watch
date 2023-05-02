@@ -41,7 +41,6 @@ class ActivityClassifier: ObservableObject {
     private var isBenchPress = false
     
     func startManageMotionData() {
-        ExtendedRunTime.shared.start()
         
         self.isStarted = true
         guard motionManager.isDeviceMotionAvailable else { return }
@@ -66,9 +65,6 @@ class ActivityClassifier: ObservableObject {
     }
     
     func stopManageMotionData() {
-        
-        ExtendedRunTime.shared.stop()
-        
         self.isStarted = false
         motionManager.stopDeviceMotionUpdates()
     }

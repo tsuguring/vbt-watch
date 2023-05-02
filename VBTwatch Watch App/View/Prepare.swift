@@ -26,6 +26,7 @@ struct Prepare: View {
         .onAppear {
             countdown.startCountdown()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

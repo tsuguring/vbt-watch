@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
-    let objective: Objective
+    let objective: ObjectiveModel
     @State private var isPush = false
     var body: some View {
         VStack(alignment: .leading) {
@@ -38,6 +38,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(objective: Objective.sampleData[0])
+        CardView(objective: ObjectiveModel.sampleData[0])
     }
 }

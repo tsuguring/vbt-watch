@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State var trainingData: TrainingModelView = TrainingModelView.sampleData[0]
     @State var data = TrainingModelView.Data()
-    let objectives: [Objective] = Objective.sampleData
+    let objectives: [ObjectiveModel] = ObjectiveModel.sampleData
     var body: some View {
         List {
             ForEach(objectives, id: \.title) { objective in

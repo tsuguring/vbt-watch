@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VBTExplanation: View {
-    let objective: Objective
+    let objective: ObjectiveModel
     var body: some View {
         ScrollView {
             VStack {
@@ -23,6 +23,6 @@ struct VBTExplanation: View {
 
 struct VBTExplanation_Previews: PreviewProvider {
     static var previews: some View {
-        VBTExplanation(objective: Objective.sampleData[0])
+        VBTExplanation(objective: ObjectiveModel.sampleData[0])
     }
 }
