@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import WatchKit
 
 class Countdown: ObservableObject {
     @Published var secondsRemaining: Int
