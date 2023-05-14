@@ -1,14 +1,6 @@
 <h1 align="center"> VBTwatch </h1> <br>
 
 https://github.com/tsuguring/VBTwatch/assets/52564598/ada13388-0d93-4e03-8af6-fdde2c6b950e
-
-## Table of Contents
-- [Introduction](#introduction)
-- [Technology Stack](#technologystack)
-- [Lisence](#license)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## Introduction
 watchOS app to support [VBT](https://en.wikipedia.org/wiki/Velocity_based_training) (training method that adjusts load based on speed)
 ### Background
