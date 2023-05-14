@@ -2,7 +2,7 @@
 
 https://github.com/tsuguring/VBTwatch/assets/52564598/ada13388-0d93-4e03-8af6-fdde2c6b950e
 ## Introduction
-watchOS app to support [VBT](https://en.wikipedia.org/wiki/Velocity_based_training) (training method that adjusts load based on speed)
+watchOS apps that support [VBT](https://en.wikipedia.org/wiki/Velocity_based_training) (training method that adjusts load based on speed)
 ### Background
 In recent years, the methods of weight training have changed as technology has evolved. With the advent of devices that visualize lifting velocity, which cannot be visually confirmed, VBT has become the norm.
 
