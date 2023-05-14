@@ -2,26 +2,26 @@
 
 https://github.com/tsuguring/VBTwatch/assets/52564598/ada13388-0d93-4e03-8af6-fdde2c6b950e
 ## Introduction
-watchOS apps that support [VBT](https://en.wikipedia.org/wiki/Velocity_based_training) (training method that adjusts load based on speed)
+[VBT](https://en.wikipedia.org/wiki/Velocity_based_training)(挙上速度をもとに負荷調整するトレーニング法)をサポートするwatchOSアプリケーション
 ### Background
-In recent years, the methods of weight training have changed as technology has evolved. With the advent of devices that visualize lifting velocity, which cannot be visually confirmed, VBT has become the norm.
+近年、テクノロジーの進化に伴い、ウェイトトレーニングの方法が変わっている。目視で確認することができない挙上速度を可視化するデバイスが登場したため、速度ベーストレーニングが主流になってきている。
 
-The advantages of VBT are as follows
-1. Appropriate training can be performed according to individual abilities and conditions. (e.g. PBT determines the weight based on the maximum weight the user can lift at one time (1RM), but 1RM varies from day to day. VBT allows the user to know what percentage of 1RM the weight is based on the lifting speed, so the training is appropriate for the condition).
-2. Reduce the risk of injury and train more efficiently.
+VBTの利点は以下である。
+1.個人の能力やコンディションに合わせた適切なトレーニングを行うことができる。(e.g. PBTではユーザーが一回持ち上げられる最大の重さ(1RM)を基準にして重量を決定するが、日によって1RMは変化する。VBTでは挙上速度でその重量が1RMの何%かわかるため、コンディションに合わせた適切なトレーニングを行える。)
+2.怪我のリスクを下げ、効率よくトレーニングを行うことができる。
 ### Motivation
-At this time, as far as we have been able to determine, there are two ways to measure velocity
-1. Purchase a dedicated VBT device and measure it.
-2. Use a smartphone application and measure.
+現時点で、我々が調べた限り速度を測定する方法は以下の2つである。
+1.VBT専用のデバイスを購入し、測定する。
+2.スマホアプリを使用し、測定する。
 
-However, each has its own disadvantages.
-1. They are very expensive (about 80,000~400,000 yen) and difficult to obtain.
-2. Since the smartphone is used as a camera to capture and measure training, it requires a lot of space and is difficult to use in a gym.
+しかし、それぞれデメリットが存在する。
+1.非常に高価(約80,000~400,000円)であり、手に入れづらい。
+2.スマホをカメラでトレーニングの様子を撮影し、測定しているため、多くの場所を確保する必要があり、ジムで使用しずらい。
 ### Purpose
-To use watchos to measure speed smartly (just put it on your arm) and support appropriate weight setting.
+watchosを使用することにより、スマート(腕につけるだけ)に挙上速度を測定し、適切な重量設定をサポートする。
 ### Method
-Create a machine learning model to determine the motion of bench press by learning the motion data of applewatch during bench press using createML.
-The acceleration during bench press is measured by the built-in acceleration sensor of AppleWatch, and the speed is calculated based on the measured acceleration.
+ベンチプレスした際のapplewatchのモーションデータをcreateMLを用いて学習させ、ベンチプレスのモーションを判定する機械学習モデルを作成。
+ベンチプレスをしている際の加速度をAppleWatch内蔵の加速度センサーにより測定し、それをもとに、速度を求める。
 
 ## Technology Stack
 Swift, SwiftUI, CoreML, AVFoundation
