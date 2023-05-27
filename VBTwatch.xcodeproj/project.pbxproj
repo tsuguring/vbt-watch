@@ -13,6 +13,7 @@
 		630110D529BAB5F40063F7BB /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110D429BAB5F40063F7BB /* Countdown.swift */; };
 		630110D929BACE250063F7BB /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110D829BACE250063F7BB /* SummaryView.swift */; };
 		630110DB29BAFBD80063F7BB /* SetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630110DA29BAFBD80063F7BB /* SetDetailView.swift */; };
+		631D710E2A18913C001FF3FD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631D710D2A18913C001FF3FD /* Persistence.swift */; };
 		63204D8929B2CAA500D60018 /* VBTwatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204D8829B2CAA500D60018 /* VBTwatchApp.swift */; };
 		63204D8B29B2CAA500D60018 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204D8A29B2CAA500D60018 /* ContentView.swift */; };
 		63204D8D29B2CAA600D60018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63204D8C29B2CAA600D60018 /* Assets.xcassets */; };
@@ -32,7 +33,10 @@
 		63237AD629BC1F2A00BB0674 /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237AD529BC1F2A00BB0674 /* SetModel.swift */; };
 		63237AD829BC1F7600BB0674 /* RepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237AD729BC1F7600BB0674 /* RepModel.swift */; };
 		63237ADB29BC58E700BB0674 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63237ADA29BC58E700BB0674 /* Constant.swift */; };
+		6352EF662A1DEC08009658A2 /* Training.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 636D57B62A18AD3C00F4372A /* Training.xcdatamodeld */; };
 		636C325F29C03B4700044408 /* RestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636C325E29C03B4700044408 /* RestView.swift */; };
+		63751DE32A1DF7A700AAC8ED /* Training.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 636D57B62A18AD3C00F4372A /* Training.xcdatamodeld */; };
+		63751DE42A1DF7B100AAC8ED /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631D710D2A18913C001FF3FD /* Persistence.swift */; };
 		637AFA5F29B98A0C00FF7CDD /* TrainingModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637AFA5E29B98A0C00FF7CDD /* TrainingModelView.swift */; };
 		FE436A0129BB164E00EDB139 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE436A0029BB164E00EDB139 /* ButtonView.swift */; };
 		FE5D888229BEB98C008F94E9 /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D888129BEB98C008F94E9 /* Text.swift */; };
@@ -70,6 +74,9 @@
 		630110D429BAB5F40063F7BB /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
 		630110D829BACE250063F7BB /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		630110DA29BAFBD80063F7BB /* SetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDetailView.swift; sourceTree = "<group>"; };
+		6303F99A2A052C01009090C1 /* VBTwatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VBTwatch Watch App.entitlements"; sourceTree = "<group>"; };
+		6316C6712A052E2500811952 /* VBTwatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VBTwatch.entitlements; sourceTree = "<group>"; };
+		631D710D2A18913C001FF3FD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		63204D8529B2CAA500D60018 /* VBTwatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBTwatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63204D8829B2CAA500D60018 /* VBTwatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBTwatchApp.swift; sourceTree = "<group>"; };
 		63204D8A29B2CAA500D60018 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,7 +99,10 @@
 		63237AD729BC1F7600BB0674 /* RepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepModel.swift; sourceTree = "<group>"; };
 		63237ADA29BC58E700BB0674 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		636C325E29C03B4700044408 /* RestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestView.swift; sourceTree = "<group>"; };
+		636D57B72A18AD3C00F4372A /* Training.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Training.xcdatamodel; sourceTree = "<group>"; };
+		63751DE52A1DFA0A00AAC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		637AFA5E29B98A0C00FF7CDD /* TrainingModelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingModelView.swift; sourceTree = "<group>"; };
+		63F3A5ED2A1CA0BF00C41E4F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		FE436A0029BB164E00EDB139 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		FE5D888129BEB98C008F94E9 /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		FEA9C97B29B9BBCF004D442D /* TrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
@@ -130,9 +140,11 @@
 		63204D7C29B2CAA500D60018 = {
 			isa = PBXGroup;
 			children = (
+				636D57BD2A18ADB600F4372A /* CoreData */,
 				63204D8729B2CAA500D60018 /* VBTwatch */,
 				63204D9929B2CAA600D60018 /* VBTwatch Watch App */,
 				63204D8629B2CAA500D60018 /* Products */,
+				63F3A5EC2A1CA0BF00C41E4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +160,8 @@
 		63204D8729B2CAA500D60018 /* VBTwatch */ = {
 			isa = PBXGroup;
 			children = (
+				63751DE52A1DFA0A00AAC8ED /* Info.plist */,
+				6316C6712A052E2500811952 /* VBTwatch.entitlements */,
 				63204D8829B2CAA500D60018 /* VBTwatchApp.swift */,
 				63204D8A29B2CAA500D60018 /* ContentView.swift */,
 				63204D8C29B2CAA600D60018 /* Assets.xcassets */,
@@ -167,6 +181,7 @@
 		63204D9929B2CAA600D60018 /* VBTwatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				6303F99A2A052C01009090C1 /* VBTwatch Watch App.entitlements */,
 				63204DB429B2E17700D60018 /* VBTwatch-Watch-App-Info.plist */,
 				63204D9A29B2CAA600D60018 /* VBTwatchApp.swift */,
 				6371102829C330C70016962F /* Activity */,
@@ -223,6 +238,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		636D57BD2A18ADB600F4372A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				636D57B62A18AD3C00F4372A /* Training.xcdatamodeld */,
+				631D710D2A18913C001FF3FD /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		6371102629C32E820016962F /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +272,14 @@
 				63204DB229B2DDB200D60018 /* BenchPressClassifier.mlmodel */,
 			);
 			path = Activity;
+			sourceTree = "<group>";
+		};
+		63F3A5EC2A1CA0BF00C41E4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63F3A5ED2A1CA0BF00C41E4F /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FE5D888029BEB873008F94E9 /* Speech */ = {
@@ -305,7 +337,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					63204D8429B2CAA500D60018 = {
 						CreatedOnToolsVersion = 14.2;
@@ -360,6 +392,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631D710E2A18913C001FF3FD /* Persistence.swift in Sources */,
+				6352EF662A1DEC08009658A2 /* Training.xcdatamodeld in Sources */,
 				63204D8B29B2CAA500D60018 /* ContentView.swift in Sources */,
 				63204D8929B2CAA500D60018 /* VBTwatchApp.swift in Sources */,
 			);
@@ -370,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63237AD629BC1F2A00BB0674 /* SetModel.swift in Sources */,
+				63751DE32A1DF7A700AAC8ED /* Training.xcdatamodeld in Sources */,
 				63204DBF29B7693100D60018 /* ObjectiveModel.swift in Sources */,
 				63237AD829BC1F7600BB0674 /* RepModel.swift in Sources */,
 				630110CE29B98DD00063F7BB /* EditView.swift in Sources */,
@@ -387,6 +422,7 @@
 				63204DBD29B72FEC00D60018 /* CardView.swift in Sources */,
 				63204DB329B2DDB200D60018 /* BenchPressClassifier.mlmodel in Sources */,
 				630110D129B98E350063F7BB /* FormView.swift in Sources */,
+				63751DE42A1DF7B100AAC8ED /* Persistence.swift in Sources */,
 				63204D9B29B2CAA600D60018 /* VBTwatchApp.swift in Sources */,
 				630110D329B9D5700063F7BB /* Prepare.swift in Sources */,
 				63237ADB29BC58E700BB0674 /* Constant.swift in Sources */,
@@ -439,6 +475,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -497,6 +534,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -520,6 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VBTwatch Watch App/VBTwatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch Watch App/Preview Content\"";
@@ -551,6 +590,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VBTwatch Watch App/VBTwatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch Watch App/Preview Content\"";
@@ -584,12 +624,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VBTwatch/VBTwatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch/Preview Content\"";
 				DEVELOPMENT_TEAM = 9QU9236F4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VBTwatch/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VBTwatch;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -617,12 +659,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VBTwatch/VBTwatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VBTwatch/Preview Content\"";
 				DEVELOPMENT_TEAM = 9QU9236F4P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VBTwatch/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = VBTwatch;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -676,6 +720,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		636D57B62A18AD3C00F4372A /* Training.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				636D57B72A18AD3C00F4372A /* Training.xcdatamodel */,
+			);
+			currentVersion = 636D57B72A18AD3C00F4372A /* Training.xcdatamodel */;
+			path = Training.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 63204D7D29B2CAA500D60018 /* Project object */;
 }

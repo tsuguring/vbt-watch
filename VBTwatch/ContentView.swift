@@ -6,16 +6,24 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var moc
+    @FetchRequest(sortDescriptors: []) private var reps: FetchedResults<RepData>
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            List(reps) { rep in
+                Text("\(rep.velocity)")
+            }
+            Button("追加") {
+                let rep = RepData(context: moc)
+                rep.id = UUID()
+                rep.velocity = 1.1
+                try? moc.save()
+            }
         }
-        .padding()
     }
 }
 

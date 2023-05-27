@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct VBTwatch_Watch_AppApp: App {
+    @StateObject private var persistenceController = PersistenceController()
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                HomeView()
+                HomeView().environment(\.managedObjectContext, persistenceController.container.viewContext)
             }
         }
     }
