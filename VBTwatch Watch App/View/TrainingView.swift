@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TrainingView: View {
     @ObservedObject var activityClassifier = ActivityClassifier()
-    @Binding var trainingData: TrainingModelView
-    @State var data = TrainingModelView.Data()
+    @Binding var trainingData: TrainingModel
+    @State var data = TrainingModel.Data()
     @State var canTransitionToSummary = false
     @State var canTransitionToHome = false
     @State var canTransitionToRest = false
@@ -226,6 +226,6 @@ struct TrainingView: View {
 
 struct TrainingView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingView(trainingData: .constant(TrainingModelView.sampleData[0]))
+        TrainingView(trainingData: .constant(TrainingModel.sampleData[0]))
     }
 }
