@@ -37,6 +37,6 @@ struct SetDetailView: View {
 
 struct SetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SetDetailView(index: 1, set: TrainingModelView.sampleData[0].sets[0])
+        SetDetailView(index: 1, set: TrainingModel.sampleData.sets[0])
     }
 }

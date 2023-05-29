@@ -8,28 +8,23 @@
 import SwiftUI
 
 struct EditView: View {
-    @Binding var trainingData: TrainingModelView
+    let trainingData: TrainingViewModel
+    @State var weight: Int = 40
+    @State var setCount: Int = 3
+    @State var maxVelocityLoss: Int = 20
     let objective: ObjectiveModel
-    @State var data = TrainingModelView.Data()
     var body: some View {
         ScrollView {
-            Form(label: "重量", data: $data.weight)
-            Form(label: "セット数", data: $data.setCount)
-            Form(label: "上限速度低下率", data: $data.maxVelocityLoss)
-            NavigationLink(destination: Prepare(trainingData: $trainingData).onAppear {
-                data.objective = objective
-                trainingData.update(from: data)
-            }) {
+            Form(label: "重量", data: $weight)
+            Form(label: "セット数", data: $setCount)
+            Form(label: "上限速度低下率", data: $maxVelocityLoss)
+            NavigationLink(destination: Prepare(trainingData: trainingData)) {
                 Text("START")
-            }.background(.pink)
+            }.simultaneousGesture(TapGesture().onEnded {
+                trainingData.updateTrainingDetail(objectiveData: objective, weight: weight, setCount: setCount, maxVelocityLoss: maxVelocityLoss)
+            }).background(.pink)
                 .cornerRadius(10)
                 .padding(.top)
         }
-    }
-}
-
-struct EditView_Previews: PreviewProvider {
-    static var previews: some View {
-        EditView(trainingData: .constant(TrainingModelView.sampleData[0]), objective: ObjectiveModel.sampleData[0])
     }
 }
