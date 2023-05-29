@@ -7,14 +7,12 @@
 
 import Foundation
 
-struct SetModel: Identifiable {
-    let id: UUID
+struct SetModel {
     var reps: [RepModel]
     var averageVelocity: Double
     var maxVelocity: Double
     
-    init(id: UUID = UUID(), reps: [RepModel], averageVelocity: Double, maxVelocity: Double) {
-        self.id = id
+    init(reps: [RepModel], averageVelocity: Double, maxVelocity: Double) {
         self.reps = reps
         self.averageVelocity = averageVelocity
         self.maxVelocity = maxVelocity

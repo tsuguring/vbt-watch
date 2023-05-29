@@ -7,23 +7,52 @@
 
 import Foundation
 
-struct TrainingModel: Identifiable {
-    let id: UUID
-    var objective: ObjectiveModel
-    var weight: Int
-    var setCount: Int
-    var sets: [SetModel]
-    var maxVelocityLoss: Int
-    var date: Date
+struct TrainingModel {
+    var objective: ObjectiveModel = ObjectiveModel.sampleData[0]
+    var weight: Int = 40
+    var setCount: Int = 3
+    var sets: [SetModel] = [SetModel.sampleSet]
+    var maxVelocityLoss: Int = 20
+    var date: Date = Date()
     
-    init(id: UUID = UUID(), objective: ObjectiveModel, weight: Int, setCount: Int, sets: [SetModel], maxVelocityLoss: Int, date: Date) {
-        self.id = id
-        self.objective = objective
+    mutating func updateTrainingDetail(objectiveData: ObjectiveModel, weight: Int, setCount: Int, maxVelocityLoss: Int) {
+        self.objective = objectiveData
         self.weight = weight
         self.setCount = setCount
-        self.sets = sets
         self.maxVelocityLoss = maxVelocityLoss
-        self.date = date
+    }
+    
+    mutating func appendSetData(setData: SetModel) {
+        self.sets.append(setData)
+    }
+    
+    mutating func appendRepData(repData: RepModel) {
+        if var lastSet = self.sets.last {
+            lastSet.reps.append(repData)
+            self.sets[sets.indices.last!] = lastSet
+        }
+    }
+    
+    mutating func updateSetMaxVelocity() {
+        self.sets[sets.indices.last!].maxVelocity = currentSetMaxVelocity()
+    }
+    
+    func currentSetMaxVelocity() -> Double {
+        guard let lastSet = self.sets.last else { return 0.00 }
+        let maxVelocity = lastSet.reps.max(by: { (a, b) -> Bool in
+            return a.velocity < b.velocity
+        })?.velocity
+        guard let maxVelocity = maxVelocity else { return 0.00 }
+        return roundVelocity(velocity: maxVelocity)
+    }
+    
+    mutating func updateSetAveVelocity() {
+        if var lastSet = self.sets.last {
+            let velocityPerRepArray = lastSet.reps.map { $0.velocity }
+            let sumVelocityPerSet = velocityPerRepArray.reduce(0, +)
+            lastSet.averageVelocity = roundVelocity(velocity: sumVelocityPerSet/Double(lastSet.reps.count))
+            self.sets[sets.indices.last!] = lastSet
+        }
     }
 }
 
@@ -52,9 +81,6 @@ extension TrainingModel {
 }
 
 extension TrainingModel {
-    static let sampleData: [TrainingModel] =
-    [
-        TrainingModel(objective: ObjectiveModel(title: "筋肥大", velocity: 0.46, perRM: 80, image: "figure.strengthtraining.traditional"), weight: 50, setCount: 2, sets: [SetModel(reps: [], averageVelocity: 0.41, maxVelocity: 0.55), SetModel(reps: [RepModel(velocity: 0.34, velocityLoss: 20, targetError: 1.12)], averageVelocity: 0.34, maxVelocity: 0.45)], maxVelocityLoss: 30, date: Date()),
-        TrainingModel(objective: ObjectiveModel(title: "スピード筋力", velocity: 0.94, perRM: 50, image: "figure.core.training"), weight: 30, setCount: 3, sets: [], maxVelocityLoss: 25, date: Date())
-    ]
+    static let sampleData: TrainingModel =
+    TrainingModel(objective: ObjectiveModel.sampleData[0], weight: 50, setCount: 2, sets: [], maxVelocityLoss: 30, date: Date())
 }

@@ -7,14 +7,12 @@
 
 import Foundation
 
-struct RepModel: Identifiable {
-    let id: UUID
+struct RepModel {
     var velocity: Double
     var velocityLoss: Int
     var targetError: Double
     
-    init(id: UUID = UUID(), velocity: Double, velocityLoss: Int, targetError: Double) {
-        self.id = id
+    init(velocity: Double, velocityLoss: Int, targetError: Double) {
         self.velocity = velocity
         self.velocityLoss = velocityLoss
         self.targetError = targetError

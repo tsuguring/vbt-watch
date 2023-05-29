@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Prepare: View {
-    @Binding var trainingData: TrainingModel
+    let trainingData: TrainingViewModel
     @ObservedObject var countdown = Countdown(secondsRemaining: 5, canTransition: false)
     var body: some View {
         VStack {
@@ -18,7 +18,7 @@ struct Prepare: View {
             Text("準備").font(.system(size: 20))
             Text("\(countdown.secondsRemaining)秒後に開始").font(.system(size: 15))
             if countdown.canTransition {
-                NavigationLink(destination: TrainingView(trainingData: $trainingData), isActive: $countdown.canTransition) {
+                NavigationLink(destination: TrainingView(trainingData: trainingData), isActive: $countdown.canTransition) {
                     EmptyView()
                 }
             }
@@ -30,8 +30,8 @@ struct Prepare: View {
     }
 }
 
-struct Prepare_Previews: PreviewProvider {
-    static var previews: some View {
-        Prepare(trainingData: .constant(TrainingModel.sampleData[0]))
-    }
-}
+//struct Prepare_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Prepare(trainingData: .constant(TrainingModelView.sampleData[0]))
+//    }
+//}
